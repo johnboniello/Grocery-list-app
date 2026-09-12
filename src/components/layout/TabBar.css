@@ -4,6 +4,7 @@
   background: var(--surface);
   position: sticky;
   bottom: 0;
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 .tab-bar__tab {
