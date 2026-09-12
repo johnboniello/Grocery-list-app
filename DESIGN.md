@@ -78,9 +78,9 @@ Pencil (edit tags), X (remove), and check icons are the same feather set —
 see the mockup source in the artifact (`Main.dc.html`, `CatalogA.dc.html`, etc.
 via "Export" in the canvas, or ask Claude to pull the exact paths again).
 
-**`AppShell.tsx` / `AppShell.css`**: add a small leaf mark (same feather
-style, `stroke="#3f6b4a"`, 18px) to the left of the "Grocery List" title.
-Title font becomes `var(--serif)`, weight 600, 21px.
+**`AppShell.tsx` / `AppShell.css`**: add a small brand mark (see §4 — the
+terracotta checkmark, 18px) to the left of the "Grocery List" title. Title
+font becomes `var(--serif)`, weight 600, 21px.
 
 **`TabBar.css`**: unchanged structurally (top border + accent on active tab);
 just inherits the new `--accent`/`--border`/`--text-muted`.
@@ -104,8 +104,8 @@ it via a wrapping span, or use `appearance: none` + background-image.
 12px`; primary = filled `var(--accent)`; danger = `var(--fail-bg)` background
 with `var(--fail-border)`/`var(--fail-text)`.
 
-**`OnboardingScreen.css`**: centered layout, add the leaf mark in a 64px
-rounded-square badge (`background: var(--accent-bg)`) above the title;
+**`OnboardingScreen.css`**: centered layout, add the brand mark (see §4) in a
+64px rounded-square badge (`background: var(--accent-bg)`) above the title;
 title in `var(--serif)` 26px; buttons `border-radius: 14px`.
 
 ## 3. Not covered / left as-is
@@ -115,3 +115,36 @@ title in `var(--serif)` 26px; buttons `border-radius: 14px`.
   canvas, kept only as a record of what was considered.
 - No new screens or flows — this is a re-skin of the existing five screens
   (Onboarding, This Week, High Frequency / Less Frequent, Catalog, Settings).
+
+## 4. App icon — decided: "Checklist Card"
+
+Forest-green background (`#3f6b4a`), cream rounded card with three list
+lines, top one checked off in terracotta. **This is already applied**:
+
+- `icon-src/icon.svg`, `icon-foreground.svg`, `icon-background.svg`,
+  `icon-maskable.svg` have been overwritten with this design (source is also
+  kept at `icon-src/candidate-c-checklist/` for reference).
+- `public/icons/*` (icon-192, icon-512, maskable-512, apple-touch-icon,
+  favicon-32) and `assets/icon.png` / `assets/icon-foreground.png` /
+  `assets/icon-background.png` have already been regenerated to match — you
+  do not need to run `icon-src/generate.mjs` yourself, though re-running it
+  is harmless (it will just reproduce the same files from the same sources).
+- The rejected candidate, `icon-src/candidate-b-basket/` (cream background,
+  basket silhouette), is left in place only as a record — delete it whenever
+  you want.
+- `assets/splash.png` / `icon-src/splash.svg` are **untouched** — still the
+  old green/white cart mark. Worth a matching pass (cream background,
+  checklist mark, centered) before shipping, but not done here.
+
+**In-app mark**: the small brand mark in the header (next to "Grocery List"),
+in the Settings header, and the logo on the Onboarding screen has been
+updated to match — a filled terracotta circle with a cream checkmark
+(the same checkmark used inside the icon's card), simple enough to read at
+~18px:
+
+```html
+<svg width="18" height="18" viewBox="0 0 100 100"><circle cx="50" cy="50" r="42" fill="#c9713f"/><path d="M32 52 L44 64 L70 36" fill="none" stroke="#fdf9f0" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+```
+
+This replaces the basket mark used in the previous draft of this document —
+see the updated mockups (page 1 of the canvas) for it in context.
