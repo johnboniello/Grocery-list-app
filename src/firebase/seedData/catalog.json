@@ -1,235 +1,2256 @@
 [
-  { "id": "c-yogurt", "name": "Yogurt", "dietTags": { "dairyFree": false, "glutenFree": true, "vegan": false, "lowCarb": false } },
-  { "id": "c-cheese", "name": "Cheese", "dietTags": { "dairyFree": false, "glutenFree": true, "vegan": false, "lowCarb": true } },
-  { "id": "c-rice", "name": "Rice", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": false, "lowCarb": false } },
-  { "id": "c-pasta", "name": "Pasta", "dietTags": { "glutenFree": false, "vegan": true, "lowCarb": false } },
-  { "id": "c-ground-beef", "name": "Ground Beef", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": false, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "c-tofu", "name": "Tofu", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": false, "lowCarb": true } },
-  { "id": "c-broccoli", "name": "Broccoli", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "c-carrots", "name": "Carrots", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "c-onions", "name": "Onions", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "c-garlic", "name": "Garlic", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "c-tomatoes", "name": "Tomatoes", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": false, "lowCarb": true } },
-  { "id": "c-potatoes", "name": "Potatoes", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": false } },
-  { "id": "c-sweet-potatoes", "name": "Sweet Potatoes", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": false } },
-  { "id": "c-avocado", "name": "Avocado", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "c-almond-milk", "name": "Almond Milk", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "lowCarb": true } },
-  { "id": "c-oat-milk", "name": "Oat Milk", "dietTags": { "dairyFree": true, "glutenFree": false, "vegan": true, "lowCarb": false } },
-  { "id": "c-peanut-butter", "name": "Peanut Butter", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": false, "lowCarb": true } },
-  { "id": "c-honey", "name": "Honey", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": false, "modifiedAIP": true, "lowCarb": false } },
-  { "id": "c-oranges", "name": "Oranges", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": false } },
-  { "id": "c-strawberries", "name": "Strawberries", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "c-shrimp", "name": "Shrimp", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": false, "modifiedAIP": false, "lowCarb": true } },
-  { "id": "c-bacon", "name": "Bacon", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": false, "modifiedAIP": false, "lowCarb": true } },
-  { "id": "c-oatmeal", "name": "Oatmeal", "dietTags": { "dairyFree": true, "glutenFree": false, "vegan": true, "lowCarb": false } },
-  { "id": "c-cereal", "name": "Cereal", "dietTags": { "glutenFree": false, "vegan": true, "lowCarb": false } },
-  { "id": "c-crackers", "name": "Crackers" },
-  { "id": "c-chips", "name": "Chips" },
-  { "id": "c-salsa", "name": "Salsa", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "c-hummus", "name": "Hummus", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": false, "lowCarb": true } },
-  { "id": "c-tortillas", "name": "Tortillas", "dietTags": { "glutenFree": false, "vegan": true } },
-  { "id": "c-ice-cream", "name": "Ice Cream", "dietTags": { "dairyFree": false, "glutenFree": true, "vegan": false, "lowCarb": false } },
-  { "id": "c-frozen-vegetables", "name": "Frozen Vegetables", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "c-orange-juice", "name": "Orange Juice", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "lowCarb": false } },
-  { "id": "c-sparkling-water", "name": "Sparkling Water", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "c-dish-soap", "name": "Dish Soap" },
-  { "id": "c-laundry-detergent", "name": "Laundry Detergent" },
-  { "id": "c-toilet-paper", "name": "Toilet Paper" },
-  { "id": "c-trash-bags", "name": "Trash Bags" },
-  { "id": "c-sponges", "name": "Sponges" },
-  { "id": "c-shampoo", "name": "Shampoo" },
-  { "id": "c-toothpaste", "name": "Toothpaste" },
-
-  { "id": "c-spinach", "name": "Spinach", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "c-kale", "name": "Kale", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "c-lettuce", "name": "Lettuce", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "c-cucumber", "name": "Cucumber", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "c-bell-peppers", "name": "Bell Peppers", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": false, "lowCarb": true } },
-  { "id": "c-zucchini", "name": "Zucchini", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "c-mushrooms", "name": "Mushrooms", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "lowCarb": true } },
-  { "id": "c-celery", "name": "Celery", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "c-green-beans", "name": "Green Beans", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "c-asparagus", "name": "Asparagus", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "c-brussels-sprouts", "name": "Brussels Sprouts", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "c-cauliflower", "name": "Cauliflower", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "c-cabbage", "name": "Cabbage", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "c-butternut-squash", "name": "Butternut Squash", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": false } },
-  { "id": "c-eggplant", "name": "Eggplant", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": false, "lowCarb": true } },
-  { "id": "c-corn", "name": "Corn", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": false, "lowCarb": false } },
-  { "id": "c-peas", "name": "Peas", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": false, "lowCarb": false } },
-  { "id": "c-green-onions", "name": "Green Onions", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "c-ginger", "name": "Ginger", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "c-lemons", "name": "Lemons", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "c-limes", "name": "Limes", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "c-bananas", "name": "Bananas", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": false } },
-  { "id": "c-apples", "name": "Apples", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": false } },
-  { "id": "c-grapes", "name": "Grapes", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": false } },
-  { "id": "c-blueberries", "name": "Blueberries", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "c-raspberries", "name": "Raspberries", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "c-pineapple", "name": "Pineapple", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": false } },
-  { "id": "c-mango", "name": "Mango", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": false } },
-  { "id": "c-watermelon", "name": "Watermelon", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": false } },
-  { "id": "c-cantaloupe", "name": "Cantaloupe", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": false } },
-  { "id": "c-peaches", "name": "Peaches", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": false } },
-  { "id": "c-pears", "name": "Pears", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": false } },
-  { "id": "c-cherries", "name": "Cherries", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": false } },
-  { "id": "c-kiwi", "name": "Kiwi", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": false } },
-  { "id": "c-plums", "name": "Plums", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": false } },
-
-  { "id": "c-eggs", "name": "Eggs", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": false, "modifiedAIP": false, "lowCarb": true } },
-  { "id": "c-butter", "name": "Butter", "dietTags": { "dairyFree": false, "glutenFree": true, "vegan": false, "lowCarb": true } },
-  { "id": "c-milk", "name": "Milk", "dietTags": { "dairyFree": false, "glutenFree": true, "vegan": false, "lowCarb": false } },
-  { "id": "c-sour-cream", "name": "Sour Cream", "dietTags": { "dairyFree": false, "glutenFree": true, "vegan": false, "lowCarb": true } },
-  { "id": "c-cream-cheese", "name": "Cream Cheese", "dietTags": { "dairyFree": false, "glutenFree": true, "vegan": false, "lowCarb": true } },
-  { "id": "c-cottage-cheese", "name": "Cottage Cheese", "dietTags": { "dairyFree": false, "glutenFree": true, "vegan": false, "lowCarb": true } },
-  { "id": "c-heavy-cream", "name": "Heavy Cream", "dietTags": { "dairyFree": false, "glutenFree": true, "vegan": false, "lowCarb": true } },
-  { "id": "c-half-and-half", "name": "Half and Half", "dietTags": { "dairyFree": false, "glutenFree": true, "vegan": false, "lowCarb": true } },
-  { "id": "c-coconut-milk", "name": "Coconut Milk", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "c-coconut-yogurt", "name": "Coconut Yogurt", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "lowCarb": false } },
-  { "id": "c-parmesan-cheese", "name": "Parmesan Cheese", "dietTags": { "dairyFree": false, "glutenFree": true, "vegan": false, "lowCarb": true } },
-  { "id": "c-mozzarella-cheese", "name": "Mozzarella Cheese", "dietTags": { "dairyFree": false, "glutenFree": true, "vegan": false, "lowCarb": true } },
-  { "id": "c-feta-cheese", "name": "Feta Cheese", "dietTags": { "dairyFree": false, "glutenFree": true, "vegan": false, "lowCarb": true } },
-  { "id": "c-ghee", "name": "Ghee", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": false, "modifiedAIP": true, "lowCarb": true } },
-
-  { "id": "c-chicken-breast", "name": "Chicken Breast", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": false, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "c-chicken-thighs", "name": "Chicken Thighs", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": false, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "c-ground-turkey", "name": "Ground Turkey", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": false, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "c-pork-chops", "name": "Pork Chops", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": false, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "c-sausage", "name": "Sausage", "dietTags": { "dairyFree": true, "vegan": false, "lowCarb": true } },
-  { "id": "c-ribeye-steak", "name": "Ribeye Steak", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": false, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "c-ground-pork", "name": "Ground Pork", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": false, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "c-salmon", "name": "Salmon", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": false, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "c-tuna-steak", "name": "Tuna Steak", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": false, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "c-cod", "name": "Cod", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": false, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "c-tilapia", "name": "Tilapia", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": false, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "c-crab", "name": "Crab", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": false, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "c-lobster", "name": "Lobster", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": false, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "c-scallops", "name": "Scallops", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": false, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "c-deli-turkey", "name": "Deli Turkey", "dietTags": { "dairyFree": true, "vegan": false, "modifiedAIP": false, "lowCarb": true } },
-  { "id": "c-deli-ham", "name": "Deli Ham", "dietTags": { "dairyFree": true, "vegan": false, "modifiedAIP": false, "lowCarb": true } },
-  { "id": "c-hot-dogs", "name": "Hot Dogs", "dietTags": { "dairyFree": true, "vegan": false, "modifiedAIP": false, "lowCarb": true } },
-  { "id": "c-chicken-wings", "name": "Chicken Wings", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": false, "modifiedAIP": true, "lowCarb": true } },
-
-  { "id": "c-bread", "name": "Bread", "dietTags": { "dairyFree": true, "glutenFree": false, "vegan": true, "lowCarb": false } },
-  { "id": "c-bagels", "name": "Bagels", "dietTags": { "dairyFree": true, "glutenFree": false, "vegan": true, "lowCarb": false } },
-  { "id": "c-english-muffins", "name": "English Muffins", "dietTags": { "dairyFree": true, "glutenFree": false, "vegan": true, "lowCarb": false } },
-  { "id": "c-dinner-rolls", "name": "Dinner Rolls", "dietTags": { "dairyFree": true, "glutenFree": false, "vegan": true, "lowCarb": false } },
-  { "id": "c-pita-bread", "name": "Pita Bread", "dietTags": { "dairyFree": true, "glutenFree": false, "vegan": true, "lowCarb": false } },
-  { "id": "c-sourdough-bread", "name": "Sourdough Bread", "dietTags": { "dairyFree": true, "glutenFree": false, "vegan": true, "lowCarb": false } },
-  { "id": "c-muffins", "name": "Muffins", "dietTags": { "glutenFree": false, "lowCarb": false } },
-  { "id": "c-croissants", "name": "Croissants", "dietTags": { "dairyFree": false, "glutenFree": false, "vegan": false, "lowCarb": false } },
-  { "id": "c-donuts", "name": "Donuts", "dietTags": { "dairyFree": false, "glutenFree": false, "vegan": false, "lowCarb": false } },
-  { "id": "c-pizza-dough", "name": "Pizza Dough", "dietTags": { "dairyFree": true, "glutenFree": false, "vegan": true, "lowCarb": false } },
-
-  { "id": "c-quinoa", "name": "Quinoa", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": false, "lowCarb": false } },
-  { "id": "c-black-beans", "name": "Black Beans", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": false, "lowCarb": false } },
-  { "id": "c-chickpeas", "name": "Chickpeas", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": false, "lowCarb": false } },
-  { "id": "c-lentils", "name": "Lentils", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": false, "lowCarb": false } },
-  { "id": "c-canned-tomatoes", "name": "Canned Tomatoes", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": false, "lowCarb": true } },
-  { "id": "c-tomato-sauce", "name": "Tomato Sauce", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": false, "lowCarb": true } },
-  { "id": "c-tomato-paste", "name": "Tomato Paste", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": false, "lowCarb": true } },
-  { "id": "c-chicken-broth", "name": "Chicken Broth", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": false, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "c-vegetable-broth", "name": "Vegetable Broth", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "c-bone-broth", "name": "Bone Broth", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": false, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "c-coconut-oil", "name": "Coconut Oil", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "c-olive-oil", "name": "Olive Oil", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "c-avocado-oil", "name": "Avocado Oil", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "c-vegetable-oil", "name": "Vegetable Oil", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": false, "lowCarb": true } },
-  { "id": "c-apple-cider-vinegar", "name": "Apple Cider Vinegar", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "c-balsamic-vinegar", "name": "Balsamic Vinegar", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "lowCarb": true } },
-  { "id": "c-soy-sauce", "name": "Soy Sauce", "dietTags": { "dairyFree": true, "glutenFree": false, "vegan": true, "modifiedAIP": false, "lowCarb": true } },
-  { "id": "c-coconut-aminos", "name": "Coconut Aminos", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "c-almond-flour", "name": "Almond Flour", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": false, "lowCarb": true } },
-  { "id": "c-coconut-flour", "name": "Coconut Flour", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "c-all-purpose-flour", "name": "All-Purpose Flour", "dietTags": { "dairyFree": true, "glutenFree": false, "vegan": true, "lowCarb": false } },
-  { "id": "c-sugar", "name": "Sugar", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": false, "lowCarb": false } },
-  { "id": "c-brown-sugar", "name": "Brown Sugar", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": false, "lowCarb": false } },
-  { "id": "c-maple-syrup", "name": "Maple Syrup", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": false } },
-  { "id": "c-baking-soda", "name": "Baking Soda", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "c-baking-powder", "name": "Baking Powder", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": false, "lowCarb": true } },
-  { "id": "c-cornstarch", "name": "Cornstarch", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": false, "lowCarb": false } },
-  { "id": "c-arrowroot-starch", "name": "Arrowroot Starch", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": false } },
-  { "id": "c-almond-butter", "name": "Almond Butter", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": false, "lowCarb": true } },
-  { "id": "c-jam", "name": "Jam", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": false, "lowCarb": false } },
-  { "id": "c-applesauce", "name": "Applesauce", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": false } },
-  { "id": "c-canned-tuna", "name": "Canned Tuna", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": false, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "c-canned-chicken", "name": "Canned Chicken", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": false, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "c-peanuts", "name": "Peanuts", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": false, "lowCarb": true } },
-  { "id": "c-almonds", "name": "Almonds", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": false, "lowCarb": true } },
-  { "id": "c-cashews", "name": "Cashews", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": false, "lowCarb": true } },
-  { "id": "c-walnuts", "name": "Walnuts", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": false, "lowCarb": true } },
-  { "id": "c-chia-seeds", "name": "Chia Seeds", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": false, "lowCarb": true } },
-  { "id": "c-popcorn-kernels", "name": "Popcorn Kernels", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": false, "lowCarb": false } },
-
-  { "id": "c-frozen-fruit", "name": "Frozen Fruit", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": false } },
-  { "id": "c-frozen-pizza", "name": "Frozen Pizza", "dietTags": { "dairyFree": false, "glutenFree": false, "vegan": false, "lowCarb": false } },
-  { "id": "c-frozen-chicken-nuggets", "name": "Frozen Chicken Nuggets", "dietTags": { "dairyFree": true, "glutenFree": false, "vegan": false, "lowCarb": false } },
-  { "id": "c-frozen-french-fries", "name": "Frozen French Fries", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": false, "lowCarb": false } },
-  { "id": "c-frozen-waffles", "name": "Frozen Waffles", "dietTags": { "dairyFree": false, "glutenFree": false, "vegan": false, "lowCarb": false } },
-  { "id": "c-frozen-shrimp", "name": "Frozen Shrimp", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": false, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "c-ice-cream-bars", "name": "Ice Cream Bars", "dietTags": { "dairyFree": false, "glutenFree": true, "vegan": false, "lowCarb": false } },
-  { "id": "c-frozen-burritos", "name": "Frozen Burritos", "dietTags": { "dairyFree": false, "glutenFree": false, "vegan": false, "lowCarb": false } },
-
-  { "id": "c-coffee", "name": "Coffee", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "lowCarb": true } },
-  { "id": "c-tea", "name": "Tea", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "c-soda", "name": "Soda", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": false, "lowCarb": false } },
-  { "id": "c-beer", "name": "Beer", "dietTags": { "dairyFree": true, "glutenFree": false, "vegan": true, "lowCarb": false } },
-  { "id": "c-wine", "name": "Wine", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": false, "lowCarb": true } },
-  { "id": "c-apple-juice", "name": "Apple Juice", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": false, "lowCarb": false } },
-  { "id": "c-cranberry-juice", "name": "Cranberry Juice", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": false, "lowCarb": false } },
-  { "id": "c-kombucha", "name": "Kombucha", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "c-energy-drinks", "name": "Energy Drinks", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": false } },
-  { "id": "c-coconut-water", "name": "Coconut Water", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": false } },
-
-  { "id": "c-ketchup", "name": "Ketchup", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": false, "lowCarb": false } },
-  { "id": "c-mustard", "name": "Mustard", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": false, "lowCarb": true } },
-  { "id": "c-mayonnaise", "name": "Mayonnaise", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": false, "modifiedAIP": false, "lowCarb": true } },
-  { "id": "c-bbq-sauce", "name": "BBQ Sauce", "dietTags": { "dairyFree": true, "vegan": true, "modifiedAIP": false, "lowCarb": false } },
-  { "id": "c-ranch-dressing", "name": "Ranch Dressing", "dietTags": { "dairyFree": false, "glutenFree": true, "vegan": false, "lowCarb": true } },
-  { "id": "c-italian-dressing", "name": "Italian Dressing", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": false, "lowCarb": true } },
-  { "id": "c-hot-sauce", "name": "Hot Sauce", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": false, "lowCarb": true } },
-  { "id": "c-pesto", "name": "Pesto", "dietTags": { "dairyFree": false, "glutenFree": true, "vegan": false, "lowCarb": true } },
-  { "id": "c-marinara-sauce", "name": "Marinara Sauce", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": false, "lowCarb": true } },
-  { "id": "c-alfredo-sauce", "name": "Alfredo Sauce", "dietTags": { "dairyFree": false, "glutenFree": true, "vegan": false, "lowCarb": true } },
-  { "id": "c-worcestershire-sauce", "name": "Worcestershire Sauce", "dietTags": { "dairyFree": true, "vegan": false, "lowCarb": true } },
-
-  { "id": "c-granola-bars", "name": "Granola Bars", "dietTags": { "dairyFree": true, "glutenFree": false, "vegan": true, "lowCarb": false } },
-  { "id": "c-trail-mix", "name": "Trail Mix", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": false, "lowCarb": false } },
-  { "id": "c-pretzels", "name": "Pretzels", "dietTags": { "dairyFree": true, "glutenFree": false, "vegan": true, "lowCarb": false } },
-  { "id": "c-ready-popcorn", "name": "Popcorn", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": false, "lowCarb": false } },
-  { "id": "c-fruit-snacks", "name": "Fruit Snacks", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": false, "modifiedAIP": false, "lowCarb": false } },
-  { "id": "c-rice-cakes", "name": "Rice Cakes", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": false, "lowCarb": false } },
-  { "id": "c-beef-jerky", "name": "Beef Jerky", "dietTags": { "dairyFree": true, "vegan": false, "modifiedAIP": false, "lowCarb": true } },
-  { "id": "c-granola", "name": "Granola", "dietTags": { "dairyFree": true, "glutenFree": false, "vegan": true, "lowCarb": false } },
-
-  { "id": "c-salt", "name": "Salt", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "c-black-pepper", "name": "Black Pepper", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": false, "lowCarb": true } },
-  { "id": "c-cinnamon", "name": "Cinnamon", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "c-cumin", "name": "Cumin", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": false, "lowCarb": true } },
-  { "id": "c-paprika", "name": "Paprika", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": false, "lowCarb": true } },
-  { "id": "c-chili-powder", "name": "Chili Powder", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": false, "lowCarb": true } },
-  { "id": "c-oregano", "name": "Oregano", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "c-basil", "name": "Basil", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "c-turmeric", "name": "Turmeric", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "c-garlic-powder", "name": "Garlic Powder", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "c-onion-powder", "name": "Onion Powder", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "c-bay-leaves", "name": "Bay Leaves", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "c-rosemary", "name": "Rosemary", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "c-thyme", "name": "Thyme", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": true } },
-
-  { "id": "c-paper-towels", "name": "Paper Towels" },
-  { "id": "c-aluminum-foil", "name": "Aluminum Foil" },
-  { "id": "c-plastic-wrap", "name": "Plastic Wrap" },
-  { "id": "c-ziploc-bags", "name": "Ziploc Bags" },
-  { "id": "c-hand-soap", "name": "Hand Soap" },
-  { "id": "c-deodorant", "name": "Deodorant" },
-  { "id": "c-body-wash", "name": "Body Wash" },
-  { "id": "c-conditioner", "name": "Conditioner" },
-  { "id": "c-razors", "name": "Razors" },
-  { "id": "c-feminine-products", "name": "Feminine Products" },
-  { "id": "c-diapers", "name": "Diapers" },
-  { "id": "c-baby-wipes", "name": "Baby Wipes" },
-  { "id": "c-light-bulbs", "name": "Light Bulbs" },
-  { "id": "c-batteries", "name": "Batteries" },
-  { "id": "c-air-freshener", "name": "Air Freshener" }
+  {
+    "id": "c-yogurt",
+    "name": "Yogurt",
+    "dietTags": {
+      "dairyFree": false,
+      "glutenFree": true,
+      "vegan": false,
+      "lowCarb": false,
+      "modifiedAIP": false
+    }
+  },
+  {
+    "id": "c-cheese",
+    "name": "Cheese",
+    "dietTags": {
+      "dairyFree": false,
+      "glutenFree": true,
+      "vegan": false,
+      "lowCarb": true,
+      "modifiedAIP": false
+    }
+  },
+  {
+    "id": "c-rice",
+    "name": "Rice",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": true,
+      "lowCarb": false
+    }
+  },
+  {
+    "id": "c-pasta",
+    "name": "Pasta",
+    "dietTags": {
+      "glutenFree": false,
+      "vegan": true,
+      "lowCarb": false
+    }
+  },
+  {
+    "id": "c-ground-beef",
+    "name": "Ground Beef",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": false,
+      "modifiedAIP": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-tofu",
+    "name": "Tofu",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": false,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-broccoli",
+    "name": "Broccoli",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-carrots",
+    "name": "Carrots",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-onions",
+    "name": "Onions",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-garlic",
+    "name": "Garlic",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-tomatoes",
+    "name": "Tomatoes",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": false,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-potatoes",
+    "name": "Potatoes",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": false,
+      "lowCarb": false
+    }
+  },
+  {
+    "id": "c-sweet-potatoes",
+    "name": "Sweet Potatoes",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": true,
+      "lowCarb": false
+    }
+  },
+  {
+    "id": "c-avocado",
+    "name": "Avocado",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-almond-milk",
+    "name": "Almond Milk",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "lowCarb": true,
+      "modifiedAIP": false
+    }
+  },
+  {
+    "id": "c-oat-milk",
+    "name": "Oat Milk",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": false,
+      "vegan": true,
+      "lowCarb": false
+    }
+  },
+  {
+    "id": "c-peanut-butter",
+    "name": "Peanut Butter",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": false,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-honey",
+    "name": "Honey",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": false,
+      "modifiedAIP": true,
+      "lowCarb": false
+    }
+  },
+  {
+    "id": "c-oranges",
+    "name": "Oranges",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": true,
+      "lowCarb": false
+    }
+  },
+  {
+    "id": "c-strawberries",
+    "name": "Strawberries",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-shrimp",
+    "name": "Shrimp",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": false,
+      "modifiedAIP": false,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-bacon",
+    "name": "Bacon",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": false,
+      "modifiedAIP": false,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-oatmeal",
+    "name": "Oatmeal",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": false,
+      "vegan": true,
+      "lowCarb": false,
+      "modifiedAIP": false
+    }
+  },
+  {
+    "id": "c-cereal",
+    "name": "Cereal",
+    "dietTags": {
+      "glutenFree": false,
+      "vegan": true,
+      "lowCarb": false,
+      "modifiedAIP": false
+    }
+  },
+  {
+    "id": "c-crackers",
+    "name": "Crackers",
+    "dietTags": {
+      "modifiedAIP": false
+    }
+  },
+  {
+    "id": "c-chips",
+    "name": "Chips"
+  },
+  {
+    "id": "c-salsa",
+    "name": "Salsa",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": false,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-hummus",
+    "name": "Hummus",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": false,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-tortillas",
+    "name": "Tortillas",
+    "dietTags": {
+      "glutenFree": false,
+      "vegan": true,
+      "modifiedAIP": false
+    }
+  },
+  {
+    "id": "c-ice-cream",
+    "name": "Ice Cream",
+    "dietTags": {
+      "dairyFree": false,
+      "glutenFree": true,
+      "vegan": false,
+      "lowCarb": false,
+      "modifiedAIP": false
+    }
+  },
+  {
+    "id": "c-frozen-vegetables",
+    "name": "Frozen Vegetables",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-orange-juice",
+    "name": "Orange Juice",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "lowCarb": false
+    }
+  },
+  {
+    "id": "c-sparkling-water",
+    "name": "Sparkling Water",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-dish-soap",
+    "name": "Dish Soap"
+  },
+  {
+    "id": "c-laundry-detergent",
+    "name": "Laundry Detergent"
+  },
+  {
+    "id": "c-toilet-paper",
+    "name": "Toilet Paper"
+  },
+  {
+    "id": "c-trash-bags",
+    "name": "Trash Bags"
+  },
+  {
+    "id": "c-sponges",
+    "name": "Sponges"
+  },
+  {
+    "id": "c-shampoo",
+    "name": "Shampoo"
+  },
+  {
+    "id": "c-toothpaste",
+    "name": "Toothpaste"
+  },
+  {
+    "id": "c-spinach",
+    "name": "Spinach",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-kale",
+    "name": "Kale",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-lettuce",
+    "name": "Lettuce",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-cucumber",
+    "name": "Cucumber",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-bell-peppers",
+    "name": "Bell Peppers",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": false,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-zucchini",
+    "name": "Zucchini",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-mushrooms",
+    "name": "Mushrooms",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-celery",
+    "name": "Celery",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-green-beans",
+    "name": "Green Beans",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-asparagus",
+    "name": "Asparagus",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-brussels-sprouts",
+    "name": "Brussels Sprouts",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-cauliflower",
+    "name": "Cauliflower",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-cabbage",
+    "name": "Cabbage",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-butternut-squash",
+    "name": "Butternut Squash",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": true,
+      "lowCarb": false
+    }
+  },
+  {
+    "id": "c-eggplant",
+    "name": "Eggplant",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": false,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-corn",
+    "name": "Corn",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": false,
+      "lowCarb": false
+    }
+  },
+  {
+    "id": "c-peas",
+    "name": "Peas",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": false,
+      "lowCarb": false
+    }
+  },
+  {
+    "id": "c-green-onions",
+    "name": "Green Onions",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-ginger",
+    "name": "Ginger",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-lemons",
+    "name": "Lemons",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-limes",
+    "name": "Limes",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-bananas",
+    "name": "Bananas",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": true,
+      "lowCarb": false
+    }
+  },
+  {
+    "id": "c-apples",
+    "name": "Apples",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": true,
+      "lowCarb": false
+    }
+  },
+  {
+    "id": "c-grapes",
+    "name": "Grapes",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": true,
+      "lowCarb": false
+    }
+  },
+  {
+    "id": "c-blueberries",
+    "name": "Blueberries",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-raspberries",
+    "name": "Raspberries",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-pineapple",
+    "name": "Pineapple",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": true,
+      "lowCarb": false
+    }
+  },
+  {
+    "id": "c-mango",
+    "name": "Mango",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": true,
+      "lowCarb": false
+    }
+  },
+  {
+    "id": "c-watermelon",
+    "name": "Watermelon",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": true,
+      "lowCarb": false
+    }
+  },
+  {
+    "id": "c-cantaloupe",
+    "name": "Cantaloupe",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": true,
+      "lowCarb": false
+    }
+  },
+  {
+    "id": "c-peaches",
+    "name": "Peaches",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": true,
+      "lowCarb": false
+    }
+  },
+  {
+    "id": "c-pears",
+    "name": "Pears",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": true,
+      "lowCarb": false
+    }
+  },
+  {
+    "id": "c-cherries",
+    "name": "Cherries",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": true,
+      "lowCarb": false
+    }
+  },
+  {
+    "id": "c-kiwi",
+    "name": "Kiwi",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": true,
+      "lowCarb": false
+    }
+  },
+  {
+    "id": "c-plums",
+    "name": "Plums",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": true,
+      "lowCarb": false
+    }
+  },
+  {
+    "id": "c-eggs",
+    "name": "Eggs",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": false,
+      "modifiedAIP": false,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-butter",
+    "name": "Butter",
+    "dietTags": {
+      "dairyFree": false,
+      "glutenFree": true,
+      "vegan": false,
+      "lowCarb": true,
+      "modifiedAIP": false
+    }
+  },
+  {
+    "id": "c-milk",
+    "name": "Milk",
+    "dietTags": {
+      "dairyFree": false,
+      "glutenFree": true,
+      "vegan": false,
+      "lowCarb": false,
+      "modifiedAIP": false
+    }
+  },
+  {
+    "id": "c-sour-cream",
+    "name": "Sour Cream",
+    "dietTags": {
+      "dairyFree": false,
+      "glutenFree": true,
+      "vegan": false,
+      "lowCarb": true,
+      "modifiedAIP": false
+    }
+  },
+  {
+    "id": "c-cream-cheese",
+    "name": "Cream Cheese",
+    "dietTags": {
+      "dairyFree": false,
+      "glutenFree": true,
+      "vegan": false,
+      "lowCarb": true,
+      "modifiedAIP": false
+    }
+  },
+  {
+    "id": "c-cottage-cheese",
+    "name": "Cottage Cheese",
+    "dietTags": {
+      "dairyFree": false,
+      "glutenFree": true,
+      "vegan": false,
+      "lowCarb": true,
+      "modifiedAIP": false
+    }
+  },
+  {
+    "id": "c-heavy-cream",
+    "name": "Heavy Cream",
+    "dietTags": {
+      "dairyFree": false,
+      "glutenFree": true,
+      "vegan": false,
+      "lowCarb": true,
+      "modifiedAIP": false
+    }
+  },
+  {
+    "id": "c-half-and-half",
+    "name": "Half and Half",
+    "dietTags": {
+      "dairyFree": false,
+      "glutenFree": true,
+      "vegan": false,
+      "lowCarb": true,
+      "modifiedAIP": false
+    }
+  },
+  {
+    "id": "c-coconut-milk",
+    "name": "Coconut Milk",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-coconut-yogurt",
+    "name": "Coconut Yogurt",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "lowCarb": false
+    }
+  },
+  {
+    "id": "c-parmesan-cheese",
+    "name": "Parmesan Cheese",
+    "dietTags": {
+      "dairyFree": false,
+      "glutenFree": true,
+      "vegan": false,
+      "lowCarb": true,
+      "modifiedAIP": false
+    }
+  },
+  {
+    "id": "c-mozzarella-cheese",
+    "name": "Mozzarella Cheese",
+    "dietTags": {
+      "dairyFree": false,
+      "glutenFree": true,
+      "vegan": false,
+      "lowCarb": true,
+      "modifiedAIP": false
+    }
+  },
+  {
+    "id": "c-feta-cheese",
+    "name": "Feta Cheese",
+    "dietTags": {
+      "dairyFree": false,
+      "glutenFree": true,
+      "vegan": false,
+      "lowCarb": true,
+      "modifiedAIP": false
+    }
+  },
+  {
+    "id": "c-ghee",
+    "name": "Ghee",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": false,
+      "modifiedAIP": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-chicken-breast",
+    "name": "Chicken Breast",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": false,
+      "modifiedAIP": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-chicken-thighs",
+    "name": "Chicken Thighs",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": false,
+      "modifiedAIP": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-ground-turkey",
+    "name": "Ground Turkey",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": false,
+      "modifiedAIP": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-pork-chops",
+    "name": "Pork Chops",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": false,
+      "modifiedAIP": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-sausage",
+    "name": "Sausage",
+    "dietTags": {
+      "dairyFree": true,
+      "vegan": false,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-ribeye-steak",
+    "name": "Ribeye Steak",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": false,
+      "modifiedAIP": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-ground-pork",
+    "name": "Ground Pork",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": false,
+      "modifiedAIP": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-salmon",
+    "name": "Salmon",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": false,
+      "modifiedAIP": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-tuna-steak",
+    "name": "Tuna Steak",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": false,
+      "modifiedAIP": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-cod",
+    "name": "Cod",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": false,
+      "modifiedAIP": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-tilapia",
+    "name": "Tilapia",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": false,
+      "modifiedAIP": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-crab",
+    "name": "Crab",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": false,
+      "modifiedAIP": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-lobster",
+    "name": "Lobster",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": false,
+      "modifiedAIP": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-scallops",
+    "name": "Scallops",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": false,
+      "modifiedAIP": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-deli-turkey",
+    "name": "Deli Turkey",
+    "dietTags": {
+      "dairyFree": true,
+      "vegan": false,
+      "modifiedAIP": false,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-deli-ham",
+    "name": "Deli Ham",
+    "dietTags": {
+      "dairyFree": true,
+      "vegan": false,
+      "modifiedAIP": false,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-hot-dogs",
+    "name": "Hot Dogs",
+    "dietTags": {
+      "dairyFree": true,
+      "vegan": false,
+      "modifiedAIP": false,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-chicken-wings",
+    "name": "Chicken Wings",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": false,
+      "modifiedAIP": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-bread",
+    "name": "Bread",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": false,
+      "vegan": true,
+      "lowCarb": false,
+      "modifiedAIP": false
+    }
+  },
+  {
+    "id": "c-bagels",
+    "name": "Bagels",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": false,
+      "vegan": true,
+      "lowCarb": false,
+      "modifiedAIP": false
+    }
+  },
+  {
+    "id": "c-english-muffins",
+    "name": "English Muffins",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": false,
+      "vegan": true,
+      "lowCarb": false,
+      "modifiedAIP": false
+    }
+  },
+  {
+    "id": "c-dinner-rolls",
+    "name": "Dinner Rolls",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": false,
+      "vegan": true,
+      "lowCarb": false,
+      "modifiedAIP": false
+    }
+  },
+  {
+    "id": "c-pita-bread",
+    "name": "Pita Bread",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": false,
+      "vegan": true,
+      "lowCarb": false,
+      "modifiedAIP": false
+    }
+  },
+  {
+    "id": "c-sourdough-bread",
+    "name": "Sourdough Bread",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": false,
+      "vegan": true,
+      "lowCarb": false,
+      "modifiedAIP": false
+    }
+  },
+  {
+    "id": "c-muffins",
+    "name": "Muffins",
+    "dietTags": {
+      "glutenFree": false,
+      "lowCarb": false,
+      "modifiedAIP": false
+    }
+  },
+  {
+    "id": "c-croissants",
+    "name": "Croissants",
+    "dietTags": {
+      "dairyFree": false,
+      "glutenFree": false,
+      "vegan": false,
+      "lowCarb": false,
+      "modifiedAIP": false
+    }
+  },
+  {
+    "id": "c-donuts",
+    "name": "Donuts",
+    "dietTags": {
+      "dairyFree": false,
+      "glutenFree": false,
+      "vegan": false,
+      "lowCarb": false,
+      "modifiedAIP": false
+    }
+  },
+  {
+    "id": "c-pizza-dough",
+    "name": "Pizza Dough",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": false,
+      "vegan": true,
+      "lowCarb": false,
+      "modifiedAIP": false
+    }
+  },
+  {
+    "id": "c-quinoa",
+    "name": "Quinoa",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": false,
+      "lowCarb": false
+    }
+  },
+  {
+    "id": "c-black-beans",
+    "name": "Black Beans",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": false,
+      "lowCarb": false
+    }
+  },
+  {
+    "id": "c-chickpeas",
+    "name": "Chickpeas",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": false,
+      "lowCarb": false
+    }
+  },
+  {
+    "id": "c-lentils",
+    "name": "Lentils",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": false,
+      "lowCarb": false
+    }
+  },
+  {
+    "id": "c-canned-tomatoes",
+    "name": "Canned Tomatoes",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": false,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-tomato-sauce",
+    "name": "Tomato Sauce",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": false,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-tomato-paste",
+    "name": "Tomato Paste",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": false,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-chicken-broth",
+    "name": "Chicken Broth",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": false,
+      "modifiedAIP": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-vegetable-broth",
+    "name": "Vegetable Broth",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-bone-broth",
+    "name": "Bone Broth",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": false,
+      "modifiedAIP": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-coconut-oil",
+    "name": "Coconut Oil",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-olive-oil",
+    "name": "Olive Oil",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-avocado-oil",
+    "name": "Avocado Oil",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-vegetable-oil",
+    "name": "Vegetable Oil",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": false,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-apple-cider-vinegar",
+    "name": "Apple Cider Vinegar",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-balsamic-vinegar",
+    "name": "Balsamic Vinegar",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-soy-sauce",
+    "name": "Soy Sauce",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": false,
+      "vegan": true,
+      "modifiedAIP": false,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-coconut-aminos",
+    "name": "Coconut Aminos",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-almond-flour",
+    "name": "Almond Flour",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": false,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-coconut-flour",
+    "name": "Coconut Flour",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-all-purpose-flour",
+    "name": "All-Purpose Flour",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": false,
+      "vegan": true,
+      "lowCarb": false,
+      "modifiedAIP": false
+    }
+  },
+  {
+    "id": "c-sugar",
+    "name": "Sugar",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": false,
+      "lowCarb": false
+    }
+  },
+  {
+    "id": "c-brown-sugar",
+    "name": "Brown Sugar",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": false,
+      "lowCarb": false
+    }
+  },
+  {
+    "id": "c-maple-syrup",
+    "name": "Maple Syrup",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": true,
+      "lowCarb": false
+    }
+  },
+  {
+    "id": "c-baking-soda",
+    "name": "Baking Soda",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-baking-powder",
+    "name": "Baking Powder",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": false,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-cornstarch",
+    "name": "Cornstarch",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": false,
+      "lowCarb": false
+    }
+  },
+  {
+    "id": "c-arrowroot-starch",
+    "name": "Arrowroot Starch",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": true,
+      "lowCarb": false
+    }
+  },
+  {
+    "id": "c-almond-butter",
+    "name": "Almond Butter",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": false,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-jam",
+    "name": "Jam",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": false,
+      "lowCarb": false
+    }
+  },
+  {
+    "id": "c-applesauce",
+    "name": "Applesauce",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": true,
+      "lowCarb": false
+    }
+  },
+  {
+    "id": "c-canned-tuna",
+    "name": "Canned Tuna",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": false,
+      "modifiedAIP": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-canned-chicken",
+    "name": "Canned Chicken",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": false,
+      "modifiedAIP": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-peanuts",
+    "name": "Peanuts",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": false,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-almonds",
+    "name": "Almonds",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": false,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-cashews",
+    "name": "Cashews",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": false,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-walnuts",
+    "name": "Walnuts",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": false,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-chia-seeds",
+    "name": "Chia Seeds",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": false,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-popcorn-kernels",
+    "name": "Popcorn Kernels",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": false,
+      "lowCarb": false
+    }
+  },
+  {
+    "id": "c-frozen-fruit",
+    "name": "Frozen Fruit",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": true,
+      "lowCarb": false
+    }
+  },
+  {
+    "id": "c-frozen-pizza",
+    "name": "Frozen Pizza",
+    "dietTags": {
+      "dairyFree": false,
+      "glutenFree": false,
+      "vegan": false,
+      "lowCarb": false,
+      "modifiedAIP": false
+    }
+  },
+  {
+    "id": "c-frozen-chicken-nuggets",
+    "name": "Frozen Chicken Nuggets",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": false,
+      "vegan": false,
+      "lowCarb": false,
+      "modifiedAIP": false
+    }
+  },
+  {
+    "id": "c-frozen-french-fries",
+    "name": "Frozen French Fries",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": false,
+      "lowCarb": false
+    }
+  },
+  {
+    "id": "c-frozen-waffles",
+    "name": "Frozen Waffles",
+    "dietTags": {
+      "dairyFree": false,
+      "glutenFree": false,
+      "vegan": false,
+      "lowCarb": false,
+      "modifiedAIP": false
+    }
+  },
+  {
+    "id": "c-frozen-shrimp",
+    "name": "Frozen Shrimp",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": false,
+      "modifiedAIP": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-ice-cream-bars",
+    "name": "Ice Cream Bars",
+    "dietTags": {
+      "dairyFree": false,
+      "glutenFree": true,
+      "vegan": false,
+      "lowCarb": false,
+      "modifiedAIP": false
+    }
+  },
+  {
+    "id": "c-frozen-burritos",
+    "name": "Frozen Burritos",
+    "dietTags": {
+      "dairyFree": false,
+      "glutenFree": false,
+      "vegan": false,
+      "lowCarb": false,
+      "modifiedAIP": false
+    }
+  },
+  {
+    "id": "c-coffee",
+    "name": "Coffee",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-tea",
+    "name": "Tea",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-soda",
+    "name": "Soda",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": false,
+      "lowCarb": false
+    }
+  },
+  {
+    "id": "c-beer",
+    "name": "Beer",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": false,
+      "vegan": true,
+      "lowCarb": false,
+      "modifiedAIP": false
+    }
+  },
+  {
+    "id": "c-wine",
+    "name": "Wine",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": false,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-apple-juice",
+    "name": "Apple Juice",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": false,
+      "lowCarb": false
+    }
+  },
+  {
+    "id": "c-cranberry-juice",
+    "name": "Cranberry Juice",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": false,
+      "lowCarb": false
+    }
+  },
+  {
+    "id": "c-kombucha",
+    "name": "Kombucha",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-energy-drinks",
+    "name": "Energy Drinks",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": false
+    }
+  },
+  {
+    "id": "c-coconut-water",
+    "name": "Coconut Water",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": true,
+      "lowCarb": false
+    }
+  },
+  {
+    "id": "c-ketchup",
+    "name": "Ketchup",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": false,
+      "lowCarb": false
+    }
+  },
+  {
+    "id": "c-mustard",
+    "name": "Mustard",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": false,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-mayonnaise",
+    "name": "Mayonnaise",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": false,
+      "modifiedAIP": false,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-bbq-sauce",
+    "name": "BBQ Sauce",
+    "dietTags": {
+      "dairyFree": true,
+      "vegan": true,
+      "modifiedAIP": false,
+      "lowCarb": false
+    }
+  },
+  {
+    "id": "c-ranch-dressing",
+    "name": "Ranch Dressing",
+    "dietTags": {
+      "dairyFree": false,
+      "glutenFree": true,
+      "vegan": false,
+      "lowCarb": true,
+      "modifiedAIP": false
+    }
+  },
+  {
+    "id": "c-italian-dressing",
+    "name": "Italian Dressing",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": false,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-hot-sauce",
+    "name": "Hot Sauce",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": false,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-pesto",
+    "name": "Pesto",
+    "dietTags": {
+      "dairyFree": false,
+      "glutenFree": true,
+      "vegan": false,
+      "lowCarb": true,
+      "modifiedAIP": false
+    }
+  },
+  {
+    "id": "c-marinara-sauce",
+    "name": "Marinara Sauce",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": false,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-alfredo-sauce",
+    "name": "Alfredo Sauce",
+    "dietTags": {
+      "dairyFree": false,
+      "glutenFree": true,
+      "vegan": false,
+      "lowCarb": true,
+      "modifiedAIP": false
+    }
+  },
+  {
+    "id": "c-worcestershire-sauce",
+    "name": "Worcestershire Sauce",
+    "dietTags": {
+      "dairyFree": true,
+      "vegan": false,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-granola-bars",
+    "name": "Granola Bars",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": false,
+      "vegan": true,
+      "lowCarb": false,
+      "modifiedAIP": false
+    }
+  },
+  {
+    "id": "c-trail-mix",
+    "name": "Trail Mix",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": false,
+      "lowCarb": false
+    }
+  },
+  {
+    "id": "c-pretzels",
+    "name": "Pretzels",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": false,
+      "vegan": true,
+      "lowCarb": false,
+      "modifiedAIP": false
+    }
+  },
+  {
+    "id": "c-ready-popcorn",
+    "name": "Popcorn",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": false,
+      "lowCarb": false
+    }
+  },
+  {
+    "id": "c-fruit-snacks",
+    "name": "Fruit Snacks",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": false,
+      "modifiedAIP": false,
+      "lowCarb": false
+    }
+  },
+  {
+    "id": "c-rice-cakes",
+    "name": "Rice Cakes",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": false,
+      "lowCarb": false
+    }
+  },
+  {
+    "id": "c-beef-jerky",
+    "name": "Beef Jerky",
+    "dietTags": {
+      "dairyFree": true,
+      "vegan": false,
+      "modifiedAIP": false,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-granola",
+    "name": "Granola",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": false,
+      "vegan": true,
+      "lowCarb": false,
+      "modifiedAIP": false
+    }
+  },
+  {
+    "id": "c-salt",
+    "name": "Salt",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-black-pepper",
+    "name": "Black Pepper",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": false,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-cinnamon",
+    "name": "Cinnamon",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-cumin",
+    "name": "Cumin",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": false,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-paprika",
+    "name": "Paprika",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": false,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-chili-powder",
+    "name": "Chili Powder",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": false,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-oregano",
+    "name": "Oregano",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-basil",
+    "name": "Basil",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-turmeric",
+    "name": "Turmeric",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-garlic-powder",
+    "name": "Garlic Powder",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-onion-powder",
+    "name": "Onion Powder",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-bay-leaves",
+    "name": "Bay Leaves",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-rosemary",
+    "name": "Rosemary",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-thyme",
+    "name": "Thyme",
+    "dietTags": {
+      "dairyFree": true,
+      "glutenFree": true,
+      "vegan": true,
+      "modifiedAIP": true,
+      "lowCarb": true
+    }
+  },
+  {
+    "id": "c-paper-towels",
+    "name": "Paper Towels"
+  },
+  {
+    "id": "c-aluminum-foil",
+    "name": "Aluminum Foil"
+  },
+  {
+    "id": "c-plastic-wrap",
+    "name": "Plastic Wrap"
+  },
+  {
+    "id": "c-ziploc-bags",
+    "name": "Ziploc Bags"
+  },
+  {
+    "id": "c-hand-soap",
+    "name": "Hand Soap"
+  },
+  {
+    "id": "c-deodorant",
+    "name": "Deodorant"
+  },
+  {
+    "id": "c-body-wash",
+    "name": "Body Wash"
+  },
+  {
+    "id": "c-conditioner",
+    "name": "Conditioner"
+  },
+  {
+    "id": "c-razors",
+    "name": "Razors"
+  },
+  {
+    "id": "c-feminine-products",
+    "name": "Feminine Products"
+  },
+  {
+    "id": "c-diapers",
+    "name": "Diapers"
+  },
+  {
+    "id": "c-baby-wipes",
+    "name": "Baby Wipes"
+  },
+  {
+    "id": "c-light-bulbs",
+    "name": "Light Bulbs"
+  },
+  {
+    "id": "c-batteries",
+    "name": "Batteries"
+  },
+  {
+    "id": "c-air-freshener",
+    "name": "Air Freshener"
+  }
 ]

@@ -89,27 +89,40 @@ export async function clearOwnHouseholdPointer(uid: string): Promise<void> {
 }
 
 /**
- * Adds any catalog seed items the household doesn't already have, without touching
- * existing entries (so custom edits to diet tags aren't clobbered). Households only
- * get seeded once at creation, so this is how an already-created household picks up
- * catalog items added to the bundled template later.
+ * Adds any catalog seed items the household doesn't already have, and refreshes the
+ * diet tags of items it already has that came from the seed (source: 'seed') to match
+ * the current template — so corrections to the bundled data (e.g. a fixed diet-tag
+ * mistake) reach households that were already seeded. Custom items a household member
+ * typed in themselves are never touched, since their id won't match a seed id.
+ * Households only get seeded once at creation, so this is how an already-created
+ * household picks up changes made to the bundled template later.
  */
 export async function resyncCatalogFromSeed(householdId: string, uid: string): Promise<number> {
   const existing = await getDocs(collection(db, 'households', householdId, 'catalog'))
-  const existingIds = new Set(existing.docs.map((d) => d.id))
-  const missing = (catalogSeed as SeedRow[]).filter((item) => !existingIds.has(item.id))
+  const existingById = new Map(existing.docs.map((d) => [d.id, d.data()]))
 
   const batch = writeBatch(db)
-  for (const item of missing) {
-    batch.set(doc(db, 'households', householdId, 'catalog', item.id), {
-      name: item.name,
-      nameLower: item.name.toLowerCase(),
-      source: 'seed',
-      createdBy: uid,
-      createdAt: serverTimestamp(),
-      ...(item.dietTags ? { dietTags: item.dietTags } : {}),
-    })
+  let changed = 0
+  for (const item of catalogSeed as SeedRow[]) {
+    const current = existingById.get(item.id)
+    if (!current) {
+      batch.set(doc(db, 'households', householdId, 'catalog', item.id), {
+        name: item.name,
+        nameLower: item.name.toLowerCase(),
+        source: 'seed',
+        createdBy: uid,
+        createdAt: serverTimestamp(),
+        ...(item.dietTags ? { dietTags: item.dietTags } : {}),
+      })
+      changed++
+    } else if (
+      current.source === 'seed' &&
+      JSON.stringify(current.dietTags ?? {}) !== JSON.stringify(item.dietTags ?? {})
+    ) {
+      batch.set(doc(db, 'households', householdId, 'catalog', item.id), { dietTags: item.dietTags ?? {} }, { merge: true })
+      changed++
+    }
   }
-  if (missing.length > 0) await batch.commit()
-  return missing.length
+  if (changed > 0) await batch.commit()
+  return changed
 }

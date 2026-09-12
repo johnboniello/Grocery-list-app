@@ -52,8 +52,8 @@ export function SettingsScreen() {
     setSyncing(true)
     setSyncMessage(null)
     try {
-      const added = await resyncCatalogFromSeed(householdId, uid)
-      setSyncMessage(added > 0 ? `Added ${added} new catalog item${added === 1 ? '' : 's'}.` : 'Catalog is already up to date.')
+      const changed = await resyncCatalogFromSeed(householdId, uid)
+      setSyncMessage(changed > 0 ? `Updated ${changed} catalog item${changed === 1 ? '' : 's'}.` : 'Catalog is already up to date.')
     } catch (err) {
       console.error('Failed to sync catalog', err)
       setSyncMessage('Could not update the catalog. Please try again.')
@@ -103,7 +103,7 @@ export function SettingsScreen() {
       <section className="settings__section">
         <h2 className="settings__heading">Catalog</h2>
         <button type="button" className="settings__btn" onClick={handleSyncCatalog} disabled={syncing}>
-          {syncing ? 'Updating…' : 'Update catalog with new items'}
+          {syncing ? 'Updating…' : 'Sync catalog updates'}
         </button>
         {syncMessage && <p className="settings__code-expiry">{syncMessage}</p>}
       </section>
