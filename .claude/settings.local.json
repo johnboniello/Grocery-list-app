@@ -9,7 +9,8 @@
       "Bash(mv \"/c/Users/johnb/OneDrive/coding/Grocery list app\" \"/c/Users/johnb/OneDrive/Documents/GitHub/Grocery list app\")",
       "Bash(tasklist //FI \"IMAGENAME eq node.exe\" //FI \"IMAGENAME eq esbuild.exe\")",
       "Bash(tasklist)",
-      "Bash(tar -C '/c/Users/johnb/OneDrive/coding/Grocery list app' --exclude=node_modules -cf - .)"
+      "Bash(tar -C '/c/Users/johnb/OneDrive/coding/Grocery list app' --exclude=node_modules -cf - .)",
+      "PowerShell(winget install --id Google.AndroidStudio -e --accept-package-agreements --accept-source-agreements)"
     ]
   }
 }

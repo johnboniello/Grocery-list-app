@@ -8,8 +8,10 @@ import { StaticListScreen } from './screens/StaticListScreen'
 import { CatalogScreen } from './screens/CatalogScreen'
 import { OnboardingScreen } from './screens/OnboardingScreen'
 import { SettingsScreen } from './screens/SettingsScreen'
+import { useAndroidBackButton } from './hooks/useAndroidBackButton'
 
 function AppRoutes() {
+  useAndroidBackButton()
   const { loading: authLoading } = useAuth()
   const { householdId, loading: householdLoading, justRevoked, dismissRevoked } = useHousehold()
 
