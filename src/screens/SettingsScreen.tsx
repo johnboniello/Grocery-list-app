@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useAuth } from '../contexts/AuthContext'
 import { useHousehold } from '../contexts/HouseholdContext'
 import { createShareCode, revokeShareCode } from '../firebase/pairing'
-import { leaveHousehold, revokeMember } from '../firebase/household'
+import { leaveHousehold, resyncCatalogFromSeed, revokeMember } from '../firebase/household'
 import './SettingsScreen.css'
 
 export function SettingsScreen() {
@@ -11,6 +11,8 @@ export function SettingsScreen() {
   const [shareCode, setShareCode] = useState<{ code: string; expiresAt: Date } | null>(null)
   const [busy, setBusy] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const [syncing, setSyncing] = useState(false)
+  const [syncMessage, setSyncMessage] = useState<string | null>(null)
 
   const handleGenerate = async () => {
     if (!householdId || !uid) return
@@ -43,6 +45,21 @@ export function SettingsScreen() {
     if (!householdId) return
     if (!window.confirm('Remove this device from the household?')) return
     await revokeMember(householdId, memberUid).catch((err: unknown) => console.error(err))
+  }
+
+  const handleSyncCatalog = async () => {
+    if (!householdId || !uid) return
+    setSyncing(true)
+    setSyncMessage(null)
+    try {
+      const added = await resyncCatalogFromSeed(householdId, uid)
+      setSyncMessage(added > 0 ? `Added ${added} new catalog item${added === 1 ? '' : 's'}.` : 'Catalog is already up to date.')
+    } catch (err) {
+      console.error('Failed to sync catalog', err)
+      setSyncMessage('Could not update the catalog. Please try again.')
+    } finally {
+      setSyncing(false)
+    }
   }
 
   return (
@@ -81,6 +98,14 @@ export function SettingsScreen() {
             </li>
           ))}
         </ul>
+      </section>
+
+      <section className="settings__section">
+        <h2 className="settings__heading">Catalog</h2>
+        <button type="button" className="settings__btn" onClick={handleSyncCatalog} disabled={syncing}>
+          {syncing ? 'Updating…' : 'Update catalog with new items'}
+        </button>
+        {syncMessage && <p className="settings__code-expiry">{syncMessage}</p>}
       </section>
 
       <section className="settings__section">

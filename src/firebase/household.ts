@@ -1,4 +1,4 @@
-import { arrayRemove, collection, doc, serverTimestamp, setDoc, writeBatch } from 'firebase/firestore'
+import { arrayRemove, collection, doc, getDocs, serverTimestamp, setDoc, writeBatch } from 'firebase/firestore'
 import { db } from './config'
 import highFrequencySeed from './seedData/highFrequency.json'
 import lessFrequentSeed from './seedData/lessFrequent.json'
@@ -86,4 +86,30 @@ export async function revokeMember(householdId: string, memberUid: string): Prom
 /** Called by a device that discovers it's been revoked, so it can get back to Onboarding. */
 export async function clearOwnHouseholdPointer(uid: string): Promise<void> {
   await setDoc(doc(db, 'users', uid), { householdId: null, updatedAt: serverTimestamp() })
+}
+
+/**
+ * Adds any catalog seed items the household doesn't already have, without touching
+ * existing entries (so custom edits to diet tags aren't clobbered). Households only
+ * get seeded once at creation, so this is how an already-created household picks up
+ * catalog items added to the bundled template later.
+ */
+export async function resyncCatalogFromSeed(householdId: string, uid: string): Promise<number> {
+  const existing = await getDocs(collection(db, 'households', householdId, 'catalog'))
+  const existingIds = new Set(existing.docs.map((d) => d.id))
+  const missing = (catalogSeed as SeedRow[]).filter((item) => !existingIds.has(item.id))
+
+  const batch = writeBatch(db)
+  for (const item of missing) {
+    batch.set(doc(db, 'households', householdId, 'catalog', item.id), {
+      name: item.name,
+      nameLower: item.name.toLowerCase(),
+      source: 'seed',
+      createdBy: uid,
+      createdAt: serverTimestamp(),
+      ...(item.dietTags ? { dietTags: item.dietTags } : {}),
+    })
+  }
+  if (missing.length > 0) await batch.commit()
+  return missing.length
 }
