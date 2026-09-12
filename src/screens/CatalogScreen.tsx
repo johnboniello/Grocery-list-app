@@ -26,9 +26,13 @@ export function CatalogScreen() {
     [filtered],
   )
 
-  const handleAddCustom = (name: string, dietTags: DietTags | undefined) => {
-    const item = addCustomItem(name, dietTags)
-    addItem(item.id, item.name, 'catalog')
+  const handleAddCustom = async (name: string, dietTags: DietTags | undefined) => {
+    try {
+      const item = await addCustomItem(name, dietTags)
+      addItem(item.id, item.name, 'catalog')
+    } catch (err) {
+      console.error('Failed to add custom item', err)
+    }
   }
 
   return (

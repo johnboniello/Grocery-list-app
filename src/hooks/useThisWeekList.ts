@@ -1,56 +1,68 @@
-import { useCallback, useMemo } from 'react'
-import { useLocalStorage } from './useLocalStorage'
+import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useHousehold } from '../contexts/HouseholdContext'
+import { useAuth } from '../contexts/AuthContext'
+import {
+  addThisWeekItem,
+  clearCheckedThisWeekItems,
+  removeThisWeekItem,
+  subscribeToThisWeek,
+  toggleThisWeekChecked,
+} from '../firebase/thisWeek'
 import type { SourceList, ThisWeekItem } from '../types/models'
 
 export function useThisWeekList() {
-  const [items, setItems] = useLocalStorage<ThisWeekItem[]>('thisWeek.items', [])
+  const { householdId } = useHousehold()
+  const { uid } = useAuth()
+  const [items, setItems] = useState<ThisWeekItem[]>([])
+
+  useEffect(() => {
+    if (!householdId) {
+      setItems([])
+      return
+    }
+    return subscribeToThisWeek(householdId, setItems, (err) => console.error('This Week subscription failed', err))
+  }, [householdId])
+
+  const addedIds = useMemo(() => new Set(items.map((item) => item.catalogItemId)), [items])
 
   const addItem = useCallback(
     (catalogItemId: string, name: string, sourceList: SourceList) => {
-      setItems((current) => {
-        if (current.some((item) => item.catalogItemId === catalogItemId)) return current
-        const newItem: ThisWeekItem = {
-          catalogItemId,
-          name,
-          sourceList,
-          checked: false,
-          addedAt: Date.now(),
-        }
-        return [...current, newItem]
-      })
+      if (!householdId || !uid || addedIds.has(catalogItemId)) return
+      addThisWeekItem(householdId, uid, catalogItemId, name, sourceList).catch((err: unknown) =>
+        console.error('Failed to add item', err),
+      )
     },
-    [setItems],
+    [householdId, uid, addedIds],
   )
 
   const toggleChecked = useCallback(
     (catalogItemId: string) => {
-      setItems((current) =>
-        current.map((item) =>
-          item.catalogItemId === catalogItemId
-            ? {
-                ...item,
-                checked: !item.checked,
-                checkedAt: !item.checked ? Date.now() : undefined,
-              }
-            : item,
-        ),
+      if (!householdId || !uid) return
+      const item = items.find((i) => i.catalogItemId === catalogItemId)
+      if (!item) return
+      toggleThisWeekChecked(householdId, catalogItemId, !item.checked, uid).catch((err: unknown) =>
+        console.error('Failed to toggle item', err),
       )
     },
-    [setItems],
+    [householdId, uid, items],
   )
 
   const removeItem = useCallback(
     (catalogItemId: string) => {
-      setItems((current) => current.filter((item) => item.catalogItemId !== catalogItemId))
+      if (!householdId) return
+      removeThisWeekItem(householdId, catalogItemId).catch((err: unknown) => console.error('Failed to remove item', err))
     },
-    [setItems],
+    [householdId],
   )
 
   const clearChecked = useCallback(() => {
-    setItems((current) => current.filter((item) => !item.checked))
-  }, [setItems])
-
-  const addedIds = useMemo(() => new Set(items.map((item) => item.catalogItemId)), [items])
+    if (!householdId) return
+    const checkedIds = items.filter((item) => item.checked).map((item) => item.catalogItemId)
+    if (checkedIds.length === 0) return
+    clearCheckedThisWeekItems(householdId, checkedIds).catch((err: unknown) =>
+      console.error('Failed to clear checked items', err),
+    )
+  }, [householdId, items])
 
   return { items, addItem, toggleChecked, removeItem, clearChecked, addedIds }
 }

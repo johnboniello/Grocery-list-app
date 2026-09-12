@@ -1,0 +1,86 @@
+.settings__section {
+  margin-bottom: 28px;
+}
+
+.settings__heading {
+  font-size: 15px;
+  color: var(--text-h);
+  margin: 0 0 10px;
+}
+
+.settings__btn {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.settings__btn--primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white;
+  font-weight: 600;
+}
+
+.settings__btn--danger {
+  color: var(--fail-text);
+  border-color: var(--fail-border);
+}
+
+.settings__code-box {
+  padding: 16px;
+  border: 1px dashed var(--accent);
+  border-radius: 10px;
+  background: var(--accent-bg);
+  text-align: center;
+}
+
+.settings__code-value {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 6px;
+  color: var(--accent);
+}
+
+.settings__code-expiry {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin: 8px 0 12px;
+}
+
+.settings__error {
+  color: var(--fail-text);
+  font-size: 13px;
+  margin-top: 8px;
+}
+
+.settings__members {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.settings__member {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  font-size: 14px;
+}
+
+.settings__revoke {
+  border: none;
+  background: none;
+  color: var(--fail-text);
+  font-size: 13px;
+  cursor: pointer;
+}

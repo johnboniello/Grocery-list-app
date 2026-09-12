@@ -1,23 +1,21 @@
-import { useMemo } from 'react'
-import { useTagOverrides } from './useTagOverrides'
-import type { DietTags, StaticListItem } from '../types/models'
+import { useEffect, useState } from 'react'
+import { useHousehold } from '../contexts/HouseholdContext'
+import { subscribeToStaticList, type StaticListName } from '../firebase/lists'
+import type { StaticListItem } from '../types/models'
 
-interface SeedRow {
-  id: string
-  name: string
-  dietTags?: DietTags
-}
+export function useStaticList(listName: StaticListName): StaticListItem[] {
+  const { householdId } = useHousehold()
+  const [items, setItems] = useState<StaticListItem[]>([])
 
-export function useStaticList(seedRows: SeedRow[]): StaticListItem[] {
-  const { overrides } = useTagOverrides()
+  useEffect(() => {
+    if (!householdId) {
+      setItems([])
+      return
+    }
+    return subscribeToStaticList(householdId, listName, setItems, (err) =>
+      console.error(`${listName} subscription failed`, err),
+    )
+  }, [householdId, listName])
 
-  return useMemo(
-    () =>
-      seedRows.map((row) => ({
-        catalogItemId: row.id,
-        name: row.name,
-        dietTags: overrides[row.id] ?? row.dietTags,
-      })),
-    [seedRows, overrides],
-  )
+  return items
 }

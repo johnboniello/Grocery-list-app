@@ -4,15 +4,13 @@ import { useThisWeekList } from '../hooks/useThisWeekList'
 import { useCatalog } from '../hooks/useCatalog'
 import { useStaticList } from '../hooks/useStaticList'
 import { useDietFilterContext } from '../contexts/DietFilterContext'
-import highFrequencySeed from '../firebase/seedData/highFrequency.json'
-import lessFrequentSeed from '../firebase/seedData/lessFrequent.json'
 import type { DietTags } from '../types/models'
 
 export function ThisWeekScreen() {
   const { items, toggleChecked, removeItem, clearChecked } = useThisWeekList()
   const { items: catalogItems } = useCatalog()
-  const highFrequency = useStaticList(highFrequencySeed)
-  const lessFrequent = useStaticList(lessFrequentSeed)
+  const highFrequency = useStaticList('highFrequency')
+  const lessFrequent = useStaticList('lessFrequent')
   const { activeRestrictions } = useDietFilterContext()
 
   // "This Week" items can originate from any of the three source lists, so the

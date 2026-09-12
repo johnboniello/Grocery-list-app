@@ -1,35 +1,36 @@
 import { ItemListView } from '../components/lists/ItemListView'
 import { useStaticList } from '../hooks/useStaticList'
 import { useThisWeekList } from '../hooks/useThisWeekList'
-import { useTagOverrides } from '../hooks/useTagOverrides'
+import { useHousehold } from '../contexts/HouseholdContext'
+import { updateStaticListItemTags, type StaticListName } from '../firebase/lists'
 import { useDietFilterContext } from '../contexts/DietFilterContext'
-import type { DietTags, SourceList } from '../types/models'
-
-interface SeedRow {
-  id: string
-  name: string
-  dietTags?: DietTags
-}
+import type { DietTags } from '../types/models'
 
 interface Props {
-  seedRows: SeedRow[]
-  sourceList: SourceList
+  listName: StaticListName
 }
 
-/** Shared screen for the High Frequency and Less Frequent tabs — identical behavior, different seed data. */
-export function StaticListScreen({ seedRows, sourceList }: Props) {
-  const rows = useStaticList(seedRows)
+/** Shared screen for the High Frequency and Less Frequent tabs — identical behavior, different Firestore collection. */
+export function StaticListScreen({ listName }: Props) {
+  const { householdId } = useHousehold()
+  const rows = useStaticList(listName)
   const { addItem, addedIds } = useThisWeekList()
-  const { setOverride } = useTagOverrides()
   const { activeRestrictions } = useDietFilterContext()
+
+  const handleEditTags = (itemId: string, dietTags: DietTags) => {
+    if (!householdId) return
+    updateStaticListItemTags(householdId, listName, itemId, dietTags).catch((err: unknown) =>
+      console.error('Failed to update tags', err),
+    )
+  }
 
   return (
     <ItemListView
       rows={rows}
       activeRestrictions={activeRestrictions}
       addedIds={addedIds}
-      onAdd={(id, name) => addItem(id, name, sourceList)}
-      onEditTags={(id, tags) => setOverride(id, tags)}
+      onAdd={(id, name) => addItem(id, name, listName)}
+      onEditTags={handleEditTags}
     />
   )
 }

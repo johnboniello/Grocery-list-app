@@ -1,73 +1,39 @@
-import { useCallback, useMemo } from 'react'
-import { useLocalStorage } from './useLocalStorage'
-import { useTagOverrides } from './useTagOverrides'
-import catalogSeed from '../firebase/seedData/catalog.json'
+import { useCallback, useEffect, useState } from 'react'
+import { useHousehold } from '../contexts/HouseholdContext'
+import { useAuth } from '../contexts/AuthContext'
+import { addCustomCatalogItem, subscribeToCatalog, updateCatalogItemTags } from '../firebase/catalog'
 import type { CatalogItem, DietTags } from '../types/models'
 
-interface SeedRow {
-  id: string
-  name: string
-  dietTags?: DietTags
-}
-
-const SEED_ITEMS: CatalogItem[] = (catalogSeed as SeedRow[]).map((item) => ({
-  id: item.id,
-  name: item.name,
-  nameLower: item.name.toLowerCase(),
-  source: 'seed',
-  dietTags: item.dietTags,
-}))
-
-function slugify(name: string) {
-  const slug = name
-    .toLowerCase()
-    .trim()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/(^-|-$)/g, '')
-  return slug ? `custom-${slug}` : `custom-${Date.now()}`
-}
-
 export function useCatalog() {
-  const [customItems, setCustomItems] = useLocalStorage<CatalogItem[]>('catalog.custom', [])
-  const { overrides, setOverride } = useTagOverrides()
+  const { householdId } = useHousehold()
+  const { uid } = useAuth()
+  const [items, setItems] = useState<CatalogItem[]>([])
 
-  const items = useMemo<CatalogItem[]>(() => {
-    const merged = [...SEED_ITEMS, ...customItems]
-    return merged.map((item) => (overrides[item.id] ? { ...item, dietTags: overrides[item.id] } : item))
-  }, [customItems, overrides])
+  useEffect(() => {
+    if (!householdId) {
+      setItems([])
+      return
+    }
+    return subscribeToCatalog(householdId, setItems, (err) => console.error('Catalog subscription failed', err))
+  }, [householdId])
 
   const addCustomItem = useCallback(
-    (name: string, dietTags?: DietTags): CatalogItem => {
-      const trimmed = name.trim()
-      const nameLower = trimmed.toLowerCase()
-      const existing = items.find((item) => item.nameLower === nameLower)
-      if (existing) return existing
-
-      const newItem: CatalogItem = {
-        id: slugify(trimmed),
-        name: trimmed,
-        nameLower,
-        source: 'custom',
-        dietTags,
-      }
-      setCustomItems((current) => [...current, newItem])
-      return newItem
+    async (name: string, dietTags?: DietTags): Promise<CatalogItem> => {
+      if (!householdId || !uid) throw new Error('No household to add to')
+      const { id, name: savedName } = await addCustomCatalogItem(householdId, uid, name, dietTags)
+      return { id, name: savedName, nameLower: savedName.toLowerCase(), source: 'custom', dietTags }
     },
-    [items, setCustomItems],
+    [householdId, uid],
   )
 
   const updateDietTags = useCallback(
     (itemId: string, dietTags: DietTags) => {
-      const isCustom = customItems.some((item) => item.id === itemId)
-      if (isCustom) {
-        setCustomItems((current) =>
-          current.map((item) => (item.id === itemId ? { ...item, dietTags } : item)),
-        )
-      } else {
-        setOverride(itemId, dietTags)
-      }
+      if (!householdId) return
+      updateCatalogItemTags(householdId, itemId, dietTags).catch((err: unknown) =>
+        console.error('Failed to update diet tags', err),
+      )
     },
-    [customItems, setCustomItems, setOverride],
+    [householdId],
   )
 
   return { items, addCustomItem, updateDietTags }
