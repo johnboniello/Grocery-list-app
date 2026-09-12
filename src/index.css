@@ -1,24 +1,25 @@
 :root {
-  --text: #3f3d45;
-  --text-muted: #6b6375;
-  --text-h: #08060d;
-  --bg: #fdfdfc;
-  --surface: #ffffff;
-  --border: #e5e4e7;
-  --accent: #2f855a;
-  --accent-bg: rgba(47, 133, 90, 0.08);
+  --text: #2b241a;
+  --text-muted: #8a7f6a;
+  --text-h: #211b12;
+  --bg: #faf6ee;
+  --surface: #fffefb;
+  --border: #e8dfcc;
+  --accent: #3f6b4a;
+  --accent-bg: #e8f0e5;
 
-  --pass-bg: #e6f6ec;
-  --pass-border: #34a853;
-  --pass-text: #1e6b3a;
-  --fail-bg: #fdecea;
-  --fail-border: #e34a3a;
-  --fail-text: #a12a1d;
-  --unknown-bg: #f1f1ef;
-  --unknown-border: #b9b6c0;
-  --unknown-text: var(--text-muted);
+  --pass-bg: #eaf1e4;
+  --pass-border: #7a9c66;
+  --pass-text: #3f5c31;
+  --fail-bg: #fbe7dc;
+  --fail-border: #c9713f;
+  --fail-text: #9a4b26;
+  --unknown-bg: #f2ede1;
+  --unknown-border: #cbbfa3;
+  --unknown-text: #8a7f68;
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --serif: 'Lora', serif;
+  --sans: 'Work Sans', system-ui, sans-serif;
   color-scheme: light dark;
   font: 16px/145% var(--sans);
   color: var(--text);

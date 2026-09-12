@@ -10,7 +10,27 @@
       "Bash(tasklist //FI \"IMAGENAME eq node.exe\" //FI \"IMAGENAME eq esbuild.exe\")",
       "Bash(tasklist)",
       "Bash(tar -C '/c/Users/johnb/OneDrive/coding/Grocery list app' --exclude=node_modules -cf - .)",
-      "PowerShell(winget install --id Google.AndroidStudio -e --accept-package-agreements --accept-source-agreements)"
+      "PowerShell(winget install --id Google.AndroidStudio -e --accept-package-agreements --accept-source-agreements)",
+      "Read(//c/Program Files/Android/**)",
+      "Read(//c/Program Files/Android/Android Studio/**)",
+      "Bash(find \"/c/Program Files/Eclipse Adoptium\" -maxdepth 1 -type d 2>&1)",
+      "Bash(where gh *)",
+      "Bash(\"/c/Program Files/GitHub CLI/gh.exe\" --version)",
+      "Bash(git config *)",
+      "Bash(cmdkey /list)",
+      "Bash(ssh -T git@github.com -o BatchMode=yes -o ConnectTimeout=5)",
+      "Read(//e/Android/Sdk/cmdline-tools/latest/bin/**)",
+      "Read(//e/Android/Sdk/emulator/**)",
+      "Bash(\"/e/Android/Sdk/cmdline-tools/latest/bin/avdmanager.bat\" list *)",
+      "Bash(ls \"/e/Android/avd\" 2>&1 *)",
+      "Bash(adb devices *)",
+      "Read(//e/tmp/**)",
+      "Bash(npm run *)",
+      "Bash(tasklist //FI \"IMAGENAME eq qemu-system-x86_64.exe\")",
+      "PowerShell(Enable-WindowsOptionalFeature -Online -FeatureName HypervisorPlatform -All -NoRestart)",
+      "Bash(npx cap *)",
+      "Bash(node -e ' *)",
+      "Bash(mkdir -p \"C:/Users/johnb/AppData/Local/Temp/claude/E--GitHub-Grocery-list-app/2355b70a-f9ef-4201-b011-3137c8c8fca9/scratchpad/dc\")"
     ]
   }
 }

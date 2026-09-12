@@ -6,7 +6,7 @@
   display: flex;
   align-items: stretch;
   border: 1px solid var(--border);
-  border-radius: 10px;
+  border-radius: 14px;
   background: var(--surface);
   overflow: hidden;
 }
@@ -31,8 +31,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 8px;
-  padding: 12px 14px;
+  gap: 10px;
+  padding: 13px 14px;
   background: none;
   border: none;
   text-align: left;
@@ -61,11 +61,12 @@
 }
 
 .item-row__edit {
+  display: flex;
+  align-items: center;
   border: none;
   border-left: 1px solid var(--border);
   background: none;
-  padding: 0 12px;
+  padding: 0 14px;
   cursor: pointer;
   color: var(--text-muted);
-  font-size: 14px;
 }
