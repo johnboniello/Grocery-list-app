@@ -1,0 +1,22 @@
+.diet-toggle-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.diet-toggle {
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-muted);
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.diet-toggle--active {
+  background: var(--accent-bg);
+  border-color: var(--accent);
+  color: var(--accent);
+  font-weight: 600;
+}

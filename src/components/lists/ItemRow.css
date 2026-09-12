@@ -1,0 +1,71 @@
+.item-row-wrapper {
+  margin-bottom: 8px;
+}
+
+.item-row {
+  display: flex;
+  align-items: stretch;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  overflow: hidden;
+}
+
+.item-row--pass {
+  background: var(--pass-bg);
+  border-color: var(--pass-border);
+}
+
+.item-row--fail {
+  background: var(--fail-bg);
+  border-color: var(--fail-border);
+}
+
+.item-row--unknown {
+  background: var(--unknown-bg);
+  border-color: var(--unknown-border);
+}
+
+.item-row__main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 12px 14px;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  color: inherit;
+}
+
+.item-row__name {
+  font-size: 15px;
+}
+
+.item-row--pass .item-row__name {
+  color: var(--pass-text);
+}
+.item-row--fail .item-row__name {
+  color: var(--fail-text);
+}
+.item-row--unknown .item-row__name {
+  color: var(--unknown-text);
+}
+
+.item-row__added {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.item-row__edit {
+  border: none;
+  border-left: 1px solid var(--border);
+  background: none;
+  padding: 0 12px;
+  cursor: pointer;
+  color: var(--text-muted);
+  font-size: 14px;
+}

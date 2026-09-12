@@ -1,0 +1,55 @@
+.this-week-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  padding: 10px 12px;
+  margin-bottom: 8px;
+}
+
+.this-week-row--pass {
+  background: var(--pass-bg);
+  border-color: var(--pass-border);
+}
+
+.this-week-row--fail {
+  background: var(--fail-bg);
+  border-color: var(--fail-border);
+}
+
+.this-week-row--unknown {
+  background: var(--unknown-bg);
+  border-color: var(--unknown-border);
+}
+
+.this-week-row--checked {
+  opacity: 0.55;
+}
+
+.this-week-row--checked .this-week-row__name {
+  text-decoration: line-through;
+}
+
+.this-week-row__main {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  cursor: pointer;
+}
+
+.this-week-row__name {
+  font-size: 15px;
+}
+
+.this-week-row__remove {
+  border: none;
+  background: none;
+  color: var(--text-muted);
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px 6px;
+}

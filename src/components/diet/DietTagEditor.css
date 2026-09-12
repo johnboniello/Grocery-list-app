@@ -1,0 +1,56 @@
+.diet-tag-editor {
+  margin: 8px 0 4px;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.diet-tag-editor__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.diet-tag-editor__label {
+  font-size: 13px;
+  color: var(--text);
+}
+
+.diet-tag-editor__controls {
+  display: flex;
+  gap: 4px;
+}
+
+.diet-tag-editor__btn {
+  font-size: 11px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.diet-tag-editor__btn--selected {
+  font-weight: 600;
+  color: var(--text-h);
+  border-color: var(--text-h);
+}
+
+.diet-tag-editor__btn--pass.diet-tag-editor__btn--selected {
+  background: var(--pass-bg);
+  border-color: var(--pass-border);
+  color: var(--pass-text);
+}
+
+.diet-tag-editor__btn--fail.diet-tag-editor__btn--selected {
+  background: var(--fail-bg);
+  border-color: var(--fail-border);
+  color: var(--fail-text);
+}

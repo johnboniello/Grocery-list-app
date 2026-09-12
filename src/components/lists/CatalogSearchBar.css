@@ -1,0 +1,42 @@
+.catalog-search-bar {
+  margin-bottom: 12px;
+}
+
+.catalog-search-bar__input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 15px;
+}
+
+.catalog-search-bar__add {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.catalog-search-bar__add-btn {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px dashed var(--accent);
+  background: var(--accent-bg);
+  color: var(--accent);
+  font-size: 14px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.catalog-search-bar__tag-toggle {
+  align-self: flex-start;
+  border: none;
+  background: none;
+  color: var(--text-muted);
+  font-size: 12px;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0;
+}
