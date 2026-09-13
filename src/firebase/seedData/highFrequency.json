@@ -1,12 +1,12 @@
 [
-  { "id": "hf-milk", "name": "Milk", "dietTags": { "dairyFree": false, "glutenFree": true, "vegan": false, "lowCarb": true } },
-  { "id": "hf-eggs", "name": "Eggs", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": false, "lowCarb": true, "modifiedAIP": false } },
-  { "id": "hf-bread", "name": "Bread", "dietTags": { "glutenFree": false, "vegan": true, "lowCarb": false } },
-  { "id": "hf-bananas", "name": "Bananas", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": false } },
-  { "id": "hf-chicken-breast", "name": "Chicken Breast", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": false, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "hf-coffee", "name": "Coffee", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "lowCarb": true } },
-  { "id": "hf-butter", "name": "Butter", "dietTags": { "dairyFree": false, "glutenFree": true, "vegan": false, "lowCarb": true } },
-  { "id": "hf-apples", "name": "Apples", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": false } },
-  { "id": "hf-spinach", "name": "Spinach", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "hf-paper-towels", "name": "Paper Towels" }
+  { "id": "hf-milk", "name": "Milk", "category": "dairy", "dietTags": { "dairyFree": false, "glutenFree": true, "vegan": false, "lowCarb": true } },
+  { "id": "hf-eggs", "name": "Eggs", "category": "dairy", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": false, "lowCarb": true, "modifiedAIP": false } },
+  { "id": "hf-bread", "name": "Bread", "category": "bakery", "dietTags": { "glutenFree": false, "vegan": true, "lowCarb": false } },
+  { "id": "hf-bananas", "name": "Bananas", "category": "produce", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": false } },
+  { "id": "hf-chicken-breast", "name": "Chicken Breast", "category": "meat", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": false, "modifiedAIP": true, "lowCarb": true } },
+  { "id": "hf-coffee", "name": "Coffee", "category": "beverages", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "lowCarb": true } },
+  { "id": "hf-butter", "name": "Butter", "category": "dairy", "dietTags": { "dairyFree": false, "glutenFree": true, "vegan": false, "lowCarb": true } },
+  { "id": "hf-apples", "name": "Apples", "category": "produce", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": false } },
+  { "id": "hf-spinach", "name": "Spinach", "category": "produce", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": true } },
+  { "id": "hf-paper-towels", "name": "Paper Towels", "category": "household" }
 ]

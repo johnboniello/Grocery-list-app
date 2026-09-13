@@ -1,6 +1,6 @@
 import { collection, doc, onSnapshot, orderBy, query, serverTimestamp, setDoc } from 'firebase/firestore'
 import { db } from './config'
-import type { CatalogItem, DietTags } from '../types/models'
+import type { Category, CatalogItem, DietTags } from '../types/models'
 
 function catalogCollection(householdId: string) {
   return collection(db, 'households', householdId, 'catalog')
@@ -24,6 +24,7 @@ export function subscribeToCatalog(
             nameLower: data.nameLower,
             source: data.source,
             dietTags: data.dietTags,
+            category: data.category,
           } as CatalogItem
         }),
       )
@@ -47,6 +48,7 @@ export async function addCustomCatalogItem(
   uid: string,
   name: string,
   dietTags: DietTags | undefined,
+  category: Category | undefined,
 ): Promise<{ id: string; name: string }> {
   const trimmed = name.trim()
   const id = slugify(trimmed)
@@ -59,6 +61,7 @@ export async function addCustomCatalogItem(
       createdBy: uid,
       createdAt: serverTimestamp(),
       ...(dietTags ? { dietTags } : {}),
+      ...(category ? { category } : {}),
     },
     { merge: true },
   )

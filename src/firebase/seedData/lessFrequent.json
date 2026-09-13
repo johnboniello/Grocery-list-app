@@ -1,10 +1,10 @@
 [
-  { "id": "lf-olive-oil", "name": "Olive Oil", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "lf-almond-flour", "name": "Almond Flour", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "lowCarb": true } },
-  { "id": "lf-coconut-milk", "name": "Coconut Milk", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "lf-quinoa", "name": "Quinoa", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": false, "lowCarb": false } },
-  { "id": "lf-salmon", "name": "Salmon", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": false, "modifiedAIP": true, "lowCarb": true } },
-  { "id": "lf-dark-chocolate", "name": "Dark Chocolate", "dietTags": { "glutenFree": true, "vegan": true, "modifiedAIP": false, "lowCarb": false } },
-  { "id": "lf-batteries", "name": "Batteries" },
-  { "id": "lf-aluminum-foil", "name": "Aluminum Foil" }
+  { "id": "lf-olive-oil", "name": "Olive Oil", "category": "pantry", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": true } },
+  { "id": "lf-almond-flour", "name": "Almond Flour", "category": "pantry", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "lowCarb": true } },
+  { "id": "lf-coconut-milk", "name": "Coconut Milk", "category": "dairy", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": true, "lowCarb": true } },
+  { "id": "lf-quinoa", "name": "Quinoa", "category": "pantry", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": true, "modifiedAIP": false, "lowCarb": false } },
+  { "id": "lf-salmon", "name": "Salmon", "category": "meat", "dietTags": { "dairyFree": true, "glutenFree": true, "vegan": false, "modifiedAIP": true, "lowCarb": true } },
+  { "id": "lf-dark-chocolate", "name": "Dark Chocolate", "category": "snacks", "dietTags": { "glutenFree": true, "vegan": true, "modifiedAIP": false, "lowCarb": false } },
+  { "id": "lf-batteries", "name": "Batteries", "category": "household" },
+  { "id": "lf-aluminum-foil", "name": "Aluminum Foil", "category": "household" }
 ]

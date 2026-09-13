@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from 'react'
 import { useHousehold } from '../contexts/HouseholdContext'
 import { useAuth } from '../contexts/AuthContext'
 import { addCustomCatalogItem, subscribeToCatalog, updateCatalogItemTags } from '../firebase/catalog'
-import type { CatalogItem, DietTags } from '../types/models'
+import type { Category, CatalogItem, DietTags } from '../types/models'
 
 export function useCatalog() {
   const { householdId } = useHousehold()
@@ -18,10 +18,10 @@ export function useCatalog() {
   }, [householdId])
 
   const addCustomItem = useCallback(
-    async (name: string, dietTags?: DietTags): Promise<CatalogItem> => {
+    async (name: string, dietTags?: DietTags, category?: Category): Promise<CatalogItem> => {
       if (!householdId || !uid) throw new Error('No household to add to')
-      const { id, name: savedName } = await addCustomCatalogItem(householdId, uid, name, dietTags)
-      return { id, name: savedName, nameLower: savedName.toLowerCase(), source: 'custom', dietTags }
+      const { id, name: savedName } = await addCustomCatalogItem(householdId, uid, name, dietTags, category)
+      return { id, name: savedName, nameLower: savedName.toLowerCase(), source: 'custom', dietTags, category }
     },
     [householdId, uid],
   )

@@ -8,7 +8,8 @@
       "vegan": false,
       "lowCarb": false,
       "modifiedAIP": false
-    }
+    },
+    "category": "dairy"
   },
   {
     "id": "c-cheese",
@@ -19,7 +20,8 @@
       "vegan": false,
       "lowCarb": true,
       "modifiedAIP": false
-    }
+    },
+    "category": "dairy"
   },
   {
     "id": "c-rice",
@@ -30,7 +32,8 @@
       "vegan": true,
       "modifiedAIP": true,
       "lowCarb": false
-    }
+    },
+    "category": "pantry"
   },
   {
     "id": "c-pasta",
@@ -39,7 +42,8 @@
       "glutenFree": false,
       "vegan": true,
       "lowCarb": false
-    }
+    },
+    "category": "pantry"
   },
   {
     "id": "c-ground-beef",
@@ -50,7 +54,8 @@
       "vegan": false,
       "modifiedAIP": true,
       "lowCarb": true
-    }
+    },
+    "category": "meat"
   },
   {
     "id": "c-tofu",
@@ -61,7 +66,8 @@
       "vegan": true,
       "modifiedAIP": false,
       "lowCarb": true
-    }
+    },
+    "category": "pantry"
   },
   {
     "id": "c-broccoli",
@@ -72,7 +78,8 @@
       "vegan": true,
       "modifiedAIP": true,
       "lowCarb": true
-    }
+    },
+    "category": "produce"
   },
   {
     "id": "c-carrots",
@@ -83,7 +90,8 @@
       "vegan": true,
       "modifiedAIP": true,
       "lowCarb": true
-    }
+    },
+    "category": "produce"
   },
   {
     "id": "c-onions",
@@ -94,7 +102,8 @@
       "vegan": true,
       "modifiedAIP": true,
       "lowCarb": true
-    }
+    },
+    "category": "produce"
   },
   {
     "id": "c-garlic",
@@ -105,7 +114,8 @@
       "vegan": true,
       "modifiedAIP": true,
       "lowCarb": true
-    }
+    },
+    "category": "produce"
   },
   {
     "id": "c-tomatoes",
@@ -116,7 +126,8 @@
       "vegan": true,
       "modifiedAIP": false,
       "lowCarb": true
-    }
+    },
+    "category": "produce"
   },
   {
     "id": "c-potatoes",
@@ -127,7 +138,8 @@
       "vegan": true,
       "modifiedAIP": false,
       "lowCarb": false
-    }
+    },
+    "category": "produce"
   },
   {
     "id": "c-sweet-potatoes",
@@ -138,7 +150,8 @@
       "vegan": true,
       "modifiedAIP": true,
       "lowCarb": false
-    }
+    },
+    "category": "produce"
   },
   {
     "id": "c-avocado",
@@ -149,7 +162,8 @@
       "vegan": true,
       "modifiedAIP": true,
       "lowCarb": true
-    }
+    },
+    "category": "produce"
   },
   {
     "id": "c-almond-milk",
@@ -160,7 +174,8 @@
       "vegan": true,
       "lowCarb": true,
       "modifiedAIP": false
-    }
+    },
+    "category": "dairy"
   },
   {
     "id": "c-oat-milk",
@@ -170,7 +185,8 @@
       "glutenFree": false,
       "vegan": true,
       "lowCarb": false
-    }
+    },
+    "category": "dairy"
   },
   {
     "id": "c-peanut-butter",
@@ -181,7 +197,8 @@
       "vegan": true,
       "modifiedAIP": false,
       "lowCarb": true
-    }
+    },
+    "category": "pantry"
   },
   {
     "id": "c-honey",
@@ -192,7 +209,8 @@
       "vegan": false,
       "modifiedAIP": true,
       "lowCarb": false
-    }
+    },
+    "category": "pantry"
   },
   {
     "id": "c-oranges",
@@ -203,7 +221,8 @@
       "vegan": true,
       "modifiedAIP": true,
       "lowCarb": false
-    }
+    },
+    "category": "produce"
   },
   {
     "id": "c-strawberries",
@@ -214,7 +233,8 @@
       "vegan": true,
       "modifiedAIP": true,
       "lowCarb": true
-    }
+    },
+    "category": "produce"
   },
   {
     "id": "c-shrimp",
@@ -225,7 +245,8 @@
       "vegan": false,
       "modifiedAIP": false,
       "lowCarb": true
-    }
+    },
+    "category": "meat"
   },
   {
     "id": "c-bacon",
@@ -236,7 +257,8 @@
       "vegan": false,
       "modifiedAIP": false,
       "lowCarb": true
-    }
+    },
+    "category": "meat"
   },
   {
     "id": "c-oatmeal",
@@ -247,7 +269,8 @@
       "vegan": true,
       "lowCarb": false,
       "modifiedAIP": false
-    }
+    },
+    "category": "pantry"
   },
   {
     "id": "c-cereal",
@@ -257,18 +280,21 @@
       "vegan": true,
       "lowCarb": false,
       "modifiedAIP": false
-    }
+    },
+    "category": "pantry"
   },
   {
     "id": "c-crackers",
     "name": "Crackers",
     "dietTags": {
       "modifiedAIP": false
-    }
+    },
+    "category": "snacks"
   },
   {
     "id": "c-chips",
-    "name": "Chips"
+    "name": "Chips",
+    "category": "snacks"
   },
   {
     "id": "c-salsa",
@@ -279,7 +305,8 @@
       "vegan": true,
       "modifiedAIP": false,
       "lowCarb": true
-    }
+    },
+    "category": "condiments"
   },
   {
     "id": "c-hummus",
@@ -290,7 +317,8 @@
       "vegan": true,
       "modifiedAIP": false,
       "lowCarb": true
-    }
+    },
+    "category": "condiments"
   },
   {
     "id": "c-tortillas",
@@ -299,7 +327,8 @@
       "glutenFree": false,
       "vegan": true,
       "modifiedAIP": false
-    }
+    },
+    "category": "bakery"
   },
   {
     "id": "c-ice-cream",
@@ -310,7 +339,8 @@
       "vegan": false,
       "lowCarb": false,
       "modifiedAIP": false
-    }
+    },
+    "category": "frozen"
   },
   {
     "id": "c-frozen-vegetables",
@@ -321,7 +351,8 @@
       "vegan": true,
       "modifiedAIP": true,
       "lowCarb": true
-    }
+    },
+    "category": "frozen"
   },
   {
     "id": "c-orange-juice",
@@ -331,7 +362,8 @@
       "glutenFree": true,
       "vegan": true,
       "lowCarb": false
-    }
+    },
+    "category": "beverages"
   },
   {
     "id": "c-sparkling-water",
@@ -342,35 +374,43 @@
       "vegan": true,
       "modifiedAIP": true,
       "lowCarb": true
-    }
+    },
+    "category": "beverages"
   },
   {
     "id": "c-dish-soap",
-    "name": "Dish Soap"
+    "name": "Dish Soap",
+    "category": "household"
   },
   {
     "id": "c-laundry-detergent",
-    "name": "Laundry Detergent"
+    "name": "Laundry Detergent",
+    "category": "household"
   },
   {
     "id": "c-toilet-paper",
-    "name": "Toilet Paper"
+    "name": "Toilet Paper",
+    "category": "household"
   },
   {
     "id": "c-trash-bags",
-    "name": "Trash Bags"
+    "name": "Trash Bags",
+    "category": "household"
   },
   {
     "id": "c-sponges",
-    "name": "Sponges"
+    "name": "Sponges",
+    "category": "household"
   },
   {
     "id": "c-shampoo",
-    "name": "Shampoo"
+    "name": "Shampoo",
+    "category": "household"
   },
   {
     "id": "c-toothpaste",
-    "name": "Toothpaste"
+    "name": "Toothpaste",
+    "category": "household"
   },
   {
     "id": "c-spinach",
@@ -381,7 +421,8 @@
       "vegan": true,
       "modifiedAIP": true,
       "lowCarb": true
-    }
+    },
+    "category": "produce"
   },
   {
     "id": "c-kale",
@@ -392,7 +433,8 @@
       "vegan": true,
       "modifiedAIP": true,
       "lowCarb": true
-    }
+    },
+    "category": "produce"
   },
   {
     "id": "c-lettuce",
@@ -403,7 +445,8 @@
       "vegan": true,
       "modifiedAIP": true,
       "lowCarb": true
-    }
+    },
+    "category": "produce"
   },
   {
     "id": "c-cucumber",
@@ -414,7 +457,8 @@
       "vegan": true,
       "modifiedAIP": true,
       "lowCarb": true
-    }
+    },
+    "category": "produce"
   },
   {
     "id": "c-bell-peppers",
@@ -425,7 +469,8 @@
       "vegan": true,
       "modifiedAIP": false,
       "lowCarb": true
-    }
+    },
+    "category": "produce"
   },
   {
     "id": "c-zucchini",
@@ -436,7 +481,8 @@
       "vegan": true,
       "modifiedAIP": true,
       "lowCarb": true
-    }
+    },
+    "category": "produce"
   },
   {
     "id": "c-mushrooms",
@@ -446,7 +492,8 @@
       "glutenFree": true,
       "vegan": true,
       "lowCarb": true
-    }
+    },
+    "category": "produce"
   },
   {
     "id": "c-celery",
@@ -457,7 +504,8 @@
       "vegan": true,
       "modifiedAIP": true,
       "lowCarb": true
-    }
+    },
+    "category": "produce"
   },
   {
     "id": "c-green-beans",
@@ -468,7 +516,8 @@
       "vegan": true,
       "modifiedAIP": true,
       "lowCarb": true
-    }
+    },
+    "category": "produce"
   },
   {
     "id": "c-asparagus",
@@ -479,7 +528,8 @@
       "vegan": true,
       "modifiedAIP": true,
       "lowCarb": true
-    }
+    },
+    "category": "produce"
   },
   {
     "id": "c-brussels-sprouts",
@@ -490,7 +540,8 @@
       "vegan": true,
       "modifiedAIP": true,
       "lowCarb": true
-    }
+    },
+    "category": "produce"
   },
   {
     "id": "c-cauliflower",
@@ -501,7 +552,8 @@
       "vegan": true,
       "modifiedAIP": true,
       "lowCarb": true
-    }
+    },
+    "category": "produce"
   },
   {
     "id": "c-cabbage",
@@ -512,7 +564,8 @@
       "vegan": true,
       "modifiedAIP": true,
       "lowCarb": true
-    }
+    },
+    "category": "produce"
   },
   {
     "id": "c-butternut-squash",
@@ -523,7 +576,8 @@
       "vegan": true,
       "modifiedAIP": true,
       "lowCarb": false
-    }
+    },
+    "category": "produce"
   },
   {
     "id": "c-eggplant",
@@ -534,7 +588,8 @@
       "vegan": true,
       "modifiedAIP": false,
       "lowCarb": true
-    }
+    },
+    "category": "produce"
   },
   {
     "id": "c-corn",
@@ -545,7 +600,8 @@
       "vegan": true,
       "modifiedAIP": false,
       "lowCarb": false
-    }
+    },
+    "category": "produce"
   },
   {
     "id": "c-peas",
@@ -556,7 +612,8 @@
       "vegan": true,
       "modifiedAIP": false,
       "lowCarb": false
-    }
+    },
+    "category": "produce"
   },
   {
     "id": "c-green-onions",
@@ -567,7 +624,8 @@
       "vegan": true,
       "modifiedAIP": true,
       "lowCarb": true
-    }
+    },
+    "category": "produce"
   },
   {
     "id": "c-ginger",
@@ -578,7 +636,8 @@
       "vegan": true,
       "modifiedAIP": true,
       "lowCarb": true
-    }
+    },
+    "category": "produce"
   },
   {
     "id": "c-lemons",
@@ -589,7 +648,8 @@
       "vegan": true,
       "modifiedAIP": true,
       "lowCarb": true
-    }
+    },
+    "category": "produce"
   },
   {
     "id": "c-limes",
@@ -600,7 +660,8 @@
       "vegan": true,
       "modifiedAIP": true,
       "lowCarb": true
-    }
+    },
+    "category": "produce"
   },
   {
     "id": "c-bananas",
@@ -611,7 +672,8 @@
       "vegan": true,
       "modifiedAIP": true,
       "lowCarb": false
-    }
+    },
+    "category": "produce"
   },
   {
     "id": "c-apples",
@@ -622,7 +684,8 @@
       "vegan": true,
       "modifiedAIP": true,
       "lowCarb": false
-    }
+    },
+    "category": "produce"
   },
   {
     "id": "c-grapes",
@@ -633,7 +696,8 @@
       "vegan": true,
       "modifiedAIP": true,
       "lowCarb": false
-    }
+    },
+    "category": "produce"
   },
   {
     "id": "c-blueberries",
@@ -644,7 +708,8 @@
       "vegan": true,
       "modifiedAIP": true,
       "lowCarb": true
-    }
+    },
+    "category": "produce"
   },
   {
     "id": "c-raspberries",
@@ -655,7 +720,8 @@
       "vegan": true,
       "modifiedAIP": true,
       "lowCarb": true
-    }
+    },
+    "category": "produce"
   },
   {
     "id": "c-pineapple",
@@ -666,7 +732,8 @@
       "vegan": true,
       "modifiedAIP": true,
       "lowCarb": false
-    }
+    },
+    "category": "produce"
   },
   {
     "id": "c-mango",
@@ -677,7 +744,8 @@
       "vegan": true,
       "modifiedAIP": true,
       "lowCarb": false
-    }
+    },
+    "category": "produce"
   },
   {
     "id": "c-watermelon",
@@ -688,7 +756,8 @@
       "vegan": true,
       "modifiedAIP": true,
       "lowCarb": false
-    }
+    },
+    "category": "produce"
   },
   {
     "id": "c-cantaloupe",
@@ -699,7 +768,8 @@
       "vegan": true,
       "modifiedAIP": true,
       "lowCarb": false
-    }
+    },
+    "category": "produce"
   },
   {
     "id": "c-peaches",
@@ -710,7 +780,8 @@
       "vegan": true,
       "modifiedAIP": true,
       "lowCarb": false
-    }
+    },
+    "category": "produce"
   },
   {
     "id": "c-pears",
@@ -721,7 +792,8 @@
       "vegan": true,
       "modifiedAIP": true,
       "lowCarb": false
-    }
+    },
+    "category": "produce"
   },
   {
     "id": "c-cherries",
@@ -732,7 +804,8 @@
       "vegan": true,
       "modifiedAIP": true,
       "lowCarb": false
-    }
+    },
+    "category": "produce"
   },
   {
     "id": "c-kiwi",
@@ -743,7 +816,8 @@
       "vegan": true,
       "modifiedAIP": true,
       "lowCarb": false
-    }
+    },
+    "category": "produce"
   },
   {
     "id": "c-plums",
@@ -754,7 +828,8 @@
       "vegan": true,
       "modifiedAIP": true,
       "lowCarb": false
-    }
+    },
+    "category": "produce"
   },
   {
     "id": "c-eggs",
@@ -765,7 +840,8 @@
       "vegan": false,
       "modifiedAIP": false,
       "lowCarb": true
-    }
+    },
+    "category": "dairy"
   },
   {
     "id": "c-butter",
@@ -776,7 +852,8 @@
       "vegan": false,
       "lowCarb": true,
       "modifiedAIP": false
-    }
+    },
+    "category": "dairy"
   },
   {
     "id": "c-milk",
@@ -787,7 +864,8 @@
       "vegan": false,
       "lowCarb": false,
       "modifiedAIP": false
-    }
+    },
+    "category": "dairy"
   },
   {
     "id": "c-sour-cream",
@@ -798,7 +876,8 @@
       "vegan": false,
       "lowCarb": true,
       "modifiedAIP": false
-    }
+    },
+    "category": "dairy"
   },
   {
     "id": "c-cream-cheese",
@@ -809,7 +888,8 @@
       "vegan": false,
       "lowCarb": true,
       "modifiedAIP": false
-    }
+    },
+    "category": "dairy"
   },
   {
     "id": "c-cottage-cheese",
@@ -820,7 +900,8 @@
       "vegan": false,
       "lowCarb": true,
       "modifiedAIP": false
-    }
+    },
+    "category": "dairy"
   },
   {
     "id": "c-heavy-cream",
@@ -831,7 +912,8 @@
       "vegan": false,
       "lowCarb": true,
       "modifiedAIP": false
-    }
+    },
+    "category": "dairy"
   },
   {
     "id": "c-half-and-half",
@@ -842,7 +924,8 @@
       "vegan": false,
       "lowCarb": true,
       "modifiedAIP": false
-    }
+    },
+    "category": "dairy"
   },
   {
     "id": "c-coconut-milk",
@@ -853,7 +936,8 @@
       "vegan": true,
       "modifiedAIP": true,
       "lowCarb": true
-    }
+    },
+    "category": "dairy"
   },
   {
     "id": "c-coconut-yogurt",
@@ -863,7 +947,8 @@
       "glutenFree": true,
       "vegan": true,
       "lowCarb": false
-    }
+    },
+    "category": "dairy"
   },
   {
     "id": "c-parmesan-cheese",
@@ -874,7 +959,8 @@
       "vegan": false,
       "lowCarb": true,
       "modifiedAIP": false
-    }
+    },
+    "category": "dairy"
   },
   {
     "id": "c-mozzarella-cheese",
@@ -885,7 +971,8 @@
       "vegan": false,
       "lowCarb": true,
       "modifiedAIP": false
-    }
+    },
+    "category": "dairy"
   },
   {
     "id": "c-feta-cheese",
@@ -896,7 +983,8 @@
       "vegan": false,
       "lowCarb": true,
       "modifiedAIP": false
-    }
+    },
+    "category": "dairy"
   },
   {
     "id": "c-ghee",
@@ -907,7 +995,8 @@
       "vegan": false,
       "modifiedAIP": true,
       "lowCarb": true
-    }
+    },
+    "category": "dairy"
   },
   {
     "id": "c-chicken-breast",
@@ -918,7 +1007,8 @@
       "vegan": false,
       "modifiedAIP": true,
       "lowCarb": true
-    }
+    },
+    "category": "meat"
   },
   {
     "id": "c-chicken-thighs",
@@ -929,7 +1019,8 @@
       "vegan": false,
       "modifiedAIP": true,
       "lowCarb": true
-    }
+    },
+    "category": "meat"
   },
   {
     "id": "c-ground-turkey",
@@ -940,7 +1031,8 @@
       "vegan": false,
       "modifiedAIP": true,
       "lowCarb": true
-    }
+    },
+    "category": "meat"
   },
   {
     "id": "c-pork-chops",
@@ -951,7 +1043,8 @@
       "vegan": false,
       "modifiedAIP": true,
       "lowCarb": true
-    }
+    },
+    "category": "meat"
   },
   {
     "id": "c-sausage",
@@ -960,7 +1053,8 @@
       "dairyFree": true,
       "vegan": false,
       "lowCarb": true
-    }
+    },
+    "category": "meat"
   },
   {
     "id": "c-ribeye-steak",
@@ -971,7 +1065,8 @@
       "vegan": false,
       "modifiedAIP": true,
       "lowCarb": true
-    }
+    },
+    "category": "meat"
   },
   {
     "id": "c-ground-pork",
@@ -982,7 +1077,8 @@
       "vegan": false,
       "modifiedAIP": true,
       "lowCarb": true
-    }
+    },
+    "category": "meat"
   },
   {
     "id": "c-salmon",
@@ -993,7 +1089,8 @@
       "vegan": false,
       "modifiedAIP": true,
       "lowCarb": true
-    }
+    },
+    "category": "meat"
   },
   {
     "id": "c-tuna-steak",
@@ -1004,7 +1101,8 @@
       "vegan": false,
       "modifiedAIP": true,
       "lowCarb": true
-    }
+    },
+    "category": "meat"
   },
   {
     "id": "c-cod",
@@ -1015,7 +1113,8 @@
       "vegan": false,
       "modifiedAIP": true,
       "lowCarb": true
-    }
+    },
+    "category": "meat"
   },
   {
     "id": "c-tilapia",
@@ -1026,7 +1125,8 @@
       "vegan": false,
       "modifiedAIP": true,
       "lowCarb": true
-    }
+    },
+    "category": "meat"
   },
   {
     "id": "c-crab",
@@ -1037,7 +1137,8 @@
       "vegan": false,
       "modifiedAIP": true,
       "lowCarb": true
-    }
+    },
+    "category": "meat"
   },
   {
     "id": "c-lobster",
@@ -1048,7 +1149,8 @@
       "vegan": false,
       "modifiedAIP": true,
       "lowCarb": true
-    }
+    },
+    "category": "meat"
   },
   {
     "id": "c-scallops",
@@ -1059,7 +1161,8 @@
       "vegan": false,
       "modifiedAIP": true,
       "lowCarb": true
-    }
+    },
+    "category": "meat"
   },
   {
     "id": "c-deli-turkey",
@@ -1069,7 +1172,8 @@
       "vegan": false,
       "modifiedAIP": false,
       "lowCarb": true
-    }
+    },
+    "category": "meat"
   },
   {
     "id": "c-deli-ham",
@@ -1079,7 +1183,8 @@
       "vegan": false,
       "modifiedAIP": false,
       "lowCarb": true
-    }
+    },
+    "category": "meat"
   },
   {
     "id": "c-hot-dogs",
@@ -1089,7 +1194,8 @@
       "vegan": false,
       "modifiedAIP": false,
       "lowCarb": true
-    }
+    },
+    "category": "meat"
   },
   {
     "id": "c-chicken-wings",
@@ -1100,7 +1206,8 @@
       "vegan": false,
       "modifiedAIP": true,
       "lowCarb": true
-    }
+    },
+    "category": "meat"
   },
   {
     "id": "c-bread",
@@ -1111,7 +1218,8 @@
       "vegan": true,
       "lowCarb": false,
       "modifiedAIP": false
-    }
+    },
+    "category": "bakery"
   },
   {
     "id": "c-bagels",
@@ -1122,7 +1230,8 @@
       "vegan": true,
       "lowCarb": false,
       "modifiedAIP": false
-    }
+    },
+    "category": "bakery"
   },
   {
     "id": "c-english-muffins",
@@ -1133,7 +1242,8 @@
       "vegan": true,
       "lowCarb": false,
       "modifiedAIP": false
-    }
+    },
+    "category": "bakery"
   },
   {
     "id": "c-dinner-rolls",
@@ -1144,7 +1254,8 @@
       "vegan": true,
       "lowCarb": false,
       "modifiedAIP": false
-    }
+    },
+    "category": "bakery"
   },
   {
     "id": "c-pita-bread",
@@ -1155,7 +1266,8 @@
       "vegan": true,
       "lowCarb": false,
       "modifiedAIP": false
-    }
+    },
+    "category": "bakery"
   },
   {
     "id": "c-sourdough-bread",
@@ -1166,7 +1278,8 @@
       "vegan": true,
       "lowCarb": false,
       "modifiedAIP": false
-    }
+    },
+    "category": "bakery"
   },
   {
     "id": "c-muffins",
@@ -1175,7 +1288,8 @@
       "glutenFree": false,
       "lowCarb": false,
       "modifiedAIP": false
-    }
+    },
+    "category": "bakery"
   },
   {
     "id": "c-croissants",
@@ -1186,7 +1300,8 @@
       "vegan": false,
       "lowCarb": false,
       "modifiedAIP": false
-    }
+    },
+    "category": "bakery"
   },
   {
     "id": "c-donuts",
@@ -1197,7 +1312,8 @@
       "vegan": false,
       "lowCarb": false,
       "modifiedAIP": false
-    }
+    },
+    "category": "bakery"
   },
   {
     "id": "c-pizza-dough",
@@ -1208,7 +1324,8 @@
       "vegan": true,
       "lowCarb": false,
       "modifiedAIP": false
-    }
+    },
+    "category": "bakery"
   },
   {
     "id": "c-quinoa",
@@ -1219,7 +1336,8 @@
       "vegan": true,
       "modifiedAIP": false,
       "lowCarb": false
-    }
+    },
+    "category": "pantry"
   },
   {
     "id": "c-black-beans",
@@ -1230,7 +1348,8 @@
       "vegan": true,
       "modifiedAIP": false,
       "lowCarb": false
-    }
+    },
+    "category": "pantry"
   },
   {
     "id": "c-chickpeas",
@@ -1241,7 +1360,8 @@
       "vegan": true,
       "modifiedAIP": false,
       "lowCarb": false
-    }
+    },
+    "category": "pantry"
   },
   {
     "id": "c-lentils",
@@ -1252,7 +1372,8 @@
       "vegan": true,
       "modifiedAIP": false,
       "lowCarb": false
-    }
+    },
+    "category": "pantry"
   },
   {
     "id": "c-canned-tomatoes",
@@ -1263,7 +1384,8 @@
       "vegan": true,
       "modifiedAIP": false,
       "lowCarb": true
-    }
+    },
+    "category": "pantry"
   },
   {
     "id": "c-tomato-sauce",
@@ -1274,7 +1396,8 @@
       "vegan": true,
       "modifiedAIP": false,
       "lowCarb": true
-    }
+    },
+    "category": "pantry"
   },
   {
     "id": "c-tomato-paste",
@@ -1285,7 +1408,8 @@
       "vegan": true,
       "modifiedAIP": false,
       "lowCarb": true
-    }
+    },
+    "category": "pantry"
   },
   {
     "id": "c-chicken-broth",
@@ -1296,7 +1420,8 @@
       "vegan": false,
       "modifiedAIP": true,
       "lowCarb": true
-    }
+    },
+    "category": "pantry"
   },
   {
     "id": "c-vegetable-broth",
@@ -1307,7 +1432,8 @@
       "vegan": true,
       "modifiedAIP": true,
       "lowCarb": true
-    }
+    },
+    "category": "pantry"
   },
   {
     "id": "c-bone-broth",
@@ -1318,7 +1444,8 @@
       "vegan": false,
       "modifiedAIP": true,
       "lowCarb": true
-    }
+    },
+    "category": "pantry"
   },
   {
     "id": "c-coconut-oil",
@@ -1329,7 +1456,8 @@
       "vegan": true,
       "modifiedAIP": true,
       "lowCarb": true
-    }
+    },
+    "category": "pantry"
   },
   {
     "id": "c-olive-oil",
@@ -1340,7 +1468,8 @@
       "vegan": true,
       "modifiedAIP": true,
       "lowCarb": true
-    }
+    },
+    "category": "pantry"
   },
   {
     "id": "c-avocado-oil",
@@ -1351,7 +1480,8 @@
       "vegan": true,
       "modifiedAIP": true,
       "lowCarb": true
-    }
+    },
+    "category": "pantry"
   },
   {
     "id": "c-vegetable-oil",
@@ -1362,7 +1492,8 @@
       "vegan": true,
       "modifiedAIP": false,
       "lowCarb": true
-    }
+    },
+    "category": "pantry"
   },
   {
     "id": "c-apple-cider-vinegar",
@@ -1373,7 +1504,8 @@
       "vegan": true,
       "modifiedAIP": true,
       "lowCarb": true
-    }
+    },
+    "category": "pantry"
   },
   {
     "id": "c-balsamic-vinegar",
@@ -1383,7 +1515,8 @@
       "glutenFree": true,
       "vegan": true,
       "lowCarb": true
-    }
+    },
+    "category": "pantry"
   },
   {
     "id": "c-soy-sauce",
@@ -1394,7 +1527,8 @@
       "vegan": true,
       "modifiedAIP": false,
       "lowCarb": true
-    }
+    },
+    "category": "pantry"
   },
   {
     "id": "c-coconut-aminos",
@@ -1405,7 +1539,8 @@
       "vegan": true,
       "modifiedAIP": true,
       "lowCarb": true
-    }
+    },
+    "category": "pantry"
   },
   {
     "id": "c-almond-flour",
@@ -1416,7 +1551,8 @@
       "vegan": true,
       "modifiedAIP": false,
       "lowCarb": true
-    }
+    },
+    "category": "pantry"
   },
   {
     "id": "c-coconut-flour",
@@ -1427,7 +1563,8 @@
       "vegan": true,
       "modifiedAIP": true,
       "lowCarb": true
-    }
+    },
+    "category": "pantry"
   },
   {
     "id": "c-all-purpose-flour",
@@ -1438,7 +1575,8 @@
       "vegan": true,
       "lowCarb": false,
       "modifiedAIP": false
-    }
+    },
+    "category": "pantry"
   },
   {
     "id": "c-sugar",
@@ -1449,7 +1587,8 @@
       "vegan": true,
       "modifiedAIP": false,
       "lowCarb": false
-    }
+    },
+    "category": "pantry"
   },
   {
     "id": "c-brown-sugar",
@@ -1460,7 +1599,8 @@
       "vegan": true,
       "modifiedAIP": false,
       "lowCarb": false
-    }
+    },
+    "category": "pantry"
   },
   {
     "id": "c-maple-syrup",
@@ -1471,7 +1611,8 @@
       "vegan": true,
       "modifiedAIP": true,
       "lowCarb": false
-    }
+    },
+    "category": "pantry"
   },
   {
     "id": "c-baking-soda",
@@ -1482,7 +1623,8 @@
       "vegan": true,
       "modifiedAIP": true,
       "lowCarb": true
-    }
+    },
+    "category": "pantry"
   },
   {
     "id": "c-baking-powder",
@@ -1493,7 +1635,8 @@
       "vegan": true,
       "modifiedAIP": false,
       "lowCarb": true
-    }
+    },
+    "category": "pantry"
   },
   {
     "id": "c-cornstarch",
@@ -1504,7 +1647,8 @@
       "vegan": true,
       "modifiedAIP": false,
       "lowCarb": false
-    }
+    },
+    "category": "pantry"
   },
   {
     "id": "c-arrowroot-starch",
@@ -1515,7 +1659,8 @@
       "vegan": true,
       "modifiedAIP": true,
       "lowCarb": false
-    }
+    },
+    "category": "pantry"
   },
   {
     "id": "c-almond-butter",
@@ -1526,7 +1671,8 @@
       "vegan": true,
       "modifiedAIP": false,
       "lowCarb": true
-    }
+    },
+    "category": "pantry"
   },
   {
     "id": "c-jam",
@@ -1537,7 +1683,8 @@
       "vegan": true,
       "modifiedAIP": false,
       "lowCarb": false
-    }
+    },
+    "category": "pantry"
   },
   {
     "id": "c-applesauce",
@@ -1548,7 +1695,8 @@
       "vegan": true,
       "modifiedAIP": true,
       "lowCarb": false
-    }
+    },
+    "category": "pantry"
   },
   {
     "id": "c-canned-tuna",
@@ -1559,7 +1707,8 @@
       "vegan": false,
       "modifiedAIP": true,
       "lowCarb": true
-    }
+    },
+    "category": "pantry"
   },
   {
     "id": "c-canned-chicken",
@@ -1570,7 +1719,8 @@
       "vegan": false,
       "modifiedAIP": true,
       "lowCarb": true
-    }
+    },
+    "category": "pantry"
   },
   {
     "id": "c-peanuts",
@@ -1581,7 +1731,8 @@
       "vegan": true,
       "modifiedAIP": false,
       "lowCarb": true
-    }
+    },
+    "category": "pantry"
   },
   {
     "id": "c-almonds",
@@ -1592,7 +1743,8 @@
       "vegan": true,
       "modifiedAIP": false,
       "lowCarb": true
-    }
+    },
+    "category": "pantry"
   },
   {
     "id": "c-cashews",
@@ -1603,7 +1755,8 @@
       "vegan": true,
       "modifiedAIP": false,
       "lowCarb": true
-    }
+    },
+    "category": "pantry"
   },
   {
     "id": "c-walnuts",
@@ -1614,7 +1767,8 @@
       "vegan": true,
       "modifiedAIP": false,
       "lowCarb": true
-    }
+    },
+    "category": "pantry"
   },
   {
     "id": "c-chia-seeds",
@@ -1625,7 +1779,8 @@
       "vegan": true,
       "modifiedAIP": false,
       "lowCarb": true
-    }
+    },
+    "category": "pantry"
   },
   {
     "id": "c-popcorn-kernels",
@@ -1636,7 +1791,8 @@
       "vegan": true,
       "modifiedAIP": false,
       "lowCarb": false
-    }
+    },
+    "category": "pantry"
   },
   {
     "id": "c-frozen-fruit",
@@ -1647,7 +1803,8 @@
       "vegan": true,
       "modifiedAIP": true,
       "lowCarb": false
-    }
+    },
+    "category": "frozen"
   },
   {
     "id": "c-frozen-pizza",
@@ -1658,7 +1815,8 @@
       "vegan": false,
       "lowCarb": false,
       "modifiedAIP": false
-    }
+    },
+    "category": "frozen"
   },
   {
     "id": "c-frozen-chicken-nuggets",
@@ -1669,7 +1827,8 @@
       "vegan": false,
       "lowCarb": false,
       "modifiedAIP": false
-    }
+    },
+    "category": "frozen"
   },
   {
     "id": "c-frozen-french-fries",
@@ -1680,7 +1839,8 @@
       "vegan": true,
       "modifiedAIP": false,
       "lowCarb": false
-    }
+    },
+    "category": "frozen"
   },
   {
     "id": "c-frozen-waffles",
@@ -1691,7 +1851,8 @@
       "vegan": false,
       "lowCarb": false,
       "modifiedAIP": false
-    }
+    },
+    "category": "frozen"
   },
   {
     "id": "c-frozen-shrimp",
@@ -1702,7 +1863,8 @@
       "vegan": false,
       "modifiedAIP": true,
       "lowCarb": true
-    }
+    },
+    "category": "frozen"
   },
   {
     "id": "c-ice-cream-bars",
@@ -1713,7 +1875,8 @@
       "vegan": false,
       "lowCarb": false,
       "modifiedAIP": false
-    }
+    },
+    "category": "frozen"
   },
   {
     "id": "c-frozen-burritos",
@@ -1724,7 +1887,8 @@
       "vegan": false,
       "lowCarb": false,
       "modifiedAIP": false
-    }
+    },
+    "category": "frozen"
   },
   {
     "id": "c-coffee",
@@ -1734,7 +1898,8 @@
       "glutenFree": true,
       "vegan": true,
       "lowCarb": true
-    }
+    },
+    "category": "beverages"
   },
   {
     "id": "c-tea",
@@ -1745,7 +1910,8 @@
       "vegan": true,
       "modifiedAIP": true,
       "lowCarb": true
-    }
+    },
+    "category": "beverages"
   },
   {
     "id": "c-soda",
@@ -1756,7 +1922,8 @@
       "vegan": true,
       "modifiedAIP": false,
       "lowCarb": false
-    }
+    },
+    "category": "beverages"
   },
   {
     "id": "c-beer",
@@ -1767,7 +1934,8 @@
       "vegan": true,
       "lowCarb": false,
       "modifiedAIP": false
-    }
+    },
+    "category": "beverages"
   },
   {
     "id": "c-wine",
@@ -1778,7 +1946,8 @@
       "vegan": true,
       "modifiedAIP": false,
       "lowCarb": true
-    }
+    },
+    "category": "beverages"
   },
   {
     "id": "c-apple-juice",
@@ -1789,7 +1958,8 @@
       "vegan": true,
       "modifiedAIP": false,
       "lowCarb": false
-    }
+    },
+    "category": "beverages"
   },
   {
     "id": "c-cranberry-juice",
@@ -1800,7 +1970,8 @@
       "vegan": true,
       "modifiedAIP": false,
       "lowCarb": false
-    }
+    },
+    "category": "beverages"
   },
   {
     "id": "c-kombucha",
@@ -1811,7 +1982,8 @@
       "vegan": true,
       "modifiedAIP": true,
       "lowCarb": true
-    }
+    },
+    "category": "beverages"
   },
   {
     "id": "c-energy-drinks",
@@ -1821,7 +1993,8 @@
       "glutenFree": true,
       "vegan": true,
       "modifiedAIP": false
-    }
+    },
+    "category": "beverages"
   },
   {
     "id": "c-coconut-water",
@@ -1832,7 +2005,8 @@
       "vegan": true,
       "modifiedAIP": true,
       "lowCarb": false
-    }
+    },
+    "category": "beverages"
   },
   {
     "id": "c-ketchup",
@@ -1843,7 +2017,8 @@
       "vegan": true,
       "modifiedAIP": false,
       "lowCarb": false
-    }
+    },
+    "category": "condiments"
   },
   {
     "id": "c-mustard",
@@ -1854,7 +2029,8 @@
       "vegan": true,
       "modifiedAIP": false,
       "lowCarb": true
-    }
+    },
+    "category": "condiments"
   },
   {
     "id": "c-mayonnaise",
@@ -1865,7 +2041,8 @@
       "vegan": false,
       "modifiedAIP": false,
       "lowCarb": true
-    }
+    },
+    "category": "condiments"
   },
   {
     "id": "c-bbq-sauce",
@@ -1875,7 +2052,8 @@
       "vegan": true,
       "modifiedAIP": false,
       "lowCarb": false
-    }
+    },
+    "category": "condiments"
   },
   {
     "id": "c-ranch-dressing",
@@ -1886,7 +2064,8 @@
       "vegan": false,
       "lowCarb": true,
       "modifiedAIP": false
-    }
+    },
+    "category": "condiments"
   },
   {
     "id": "c-italian-dressing",
@@ -1897,7 +2076,8 @@
       "vegan": true,
       "modifiedAIP": false,
       "lowCarb": true
-    }
+    },
+    "category": "condiments"
   },
   {
     "id": "c-hot-sauce",
@@ -1908,7 +2088,8 @@
       "vegan": true,
       "modifiedAIP": false,
       "lowCarb": true
-    }
+    },
+    "category": "condiments"
   },
   {
     "id": "c-pesto",
@@ -1919,7 +2100,8 @@
       "vegan": false,
       "lowCarb": true,
       "modifiedAIP": false
-    }
+    },
+    "category": "condiments"
   },
   {
     "id": "c-marinara-sauce",
@@ -1930,7 +2112,8 @@
       "vegan": true,
       "modifiedAIP": false,
       "lowCarb": true
-    }
+    },
+    "category": "condiments"
   },
   {
     "id": "c-alfredo-sauce",
@@ -1941,7 +2124,8 @@
       "vegan": false,
       "lowCarb": true,
       "modifiedAIP": false
-    }
+    },
+    "category": "condiments"
   },
   {
     "id": "c-worcestershire-sauce",
@@ -1950,7 +2134,8 @@
       "dairyFree": true,
       "vegan": false,
       "lowCarb": true
-    }
+    },
+    "category": "condiments"
   },
   {
     "id": "c-granola-bars",
@@ -1961,7 +2146,8 @@
       "vegan": true,
       "lowCarb": false,
       "modifiedAIP": false
-    }
+    },
+    "category": "snacks"
   },
   {
     "id": "c-trail-mix",
@@ -1972,7 +2158,8 @@
       "vegan": true,
       "modifiedAIP": false,
       "lowCarb": false
-    }
+    },
+    "category": "snacks"
   },
   {
     "id": "c-pretzels",
@@ -1983,7 +2170,8 @@
       "vegan": true,
       "lowCarb": false,
       "modifiedAIP": false
-    }
+    },
+    "category": "snacks"
   },
   {
     "id": "c-ready-popcorn",
@@ -1994,7 +2182,8 @@
       "vegan": true,
       "modifiedAIP": false,
       "lowCarb": false
-    }
+    },
+    "category": "snacks"
   },
   {
     "id": "c-fruit-snacks",
@@ -2005,7 +2194,8 @@
       "vegan": false,
       "modifiedAIP": false,
       "lowCarb": false
-    }
+    },
+    "category": "snacks"
   },
   {
     "id": "c-rice-cakes",
@@ -2016,7 +2206,8 @@
       "vegan": true,
       "modifiedAIP": false,
       "lowCarb": false
-    }
+    },
+    "category": "snacks"
   },
   {
     "id": "c-beef-jerky",
@@ -2026,7 +2217,8 @@
       "vegan": false,
       "modifiedAIP": false,
       "lowCarb": true
-    }
+    },
+    "category": "snacks"
   },
   {
     "id": "c-granola",
@@ -2037,7 +2229,8 @@
       "vegan": true,
       "lowCarb": false,
       "modifiedAIP": false
-    }
+    },
+    "category": "snacks"
   },
   {
     "id": "c-salt",
@@ -2048,7 +2241,8 @@
       "vegan": true,
       "modifiedAIP": true,
       "lowCarb": true
-    }
+    },
+    "category": "spices"
   },
   {
     "id": "c-black-pepper",
@@ -2059,7 +2253,8 @@
       "vegan": true,
       "modifiedAIP": false,
       "lowCarb": true
-    }
+    },
+    "category": "spices"
   },
   {
     "id": "c-cinnamon",
@@ -2070,7 +2265,8 @@
       "vegan": true,
       "modifiedAIP": true,
       "lowCarb": true
-    }
+    },
+    "category": "spices"
   },
   {
     "id": "c-cumin",
@@ -2081,7 +2277,8 @@
       "vegan": true,
       "modifiedAIP": false,
       "lowCarb": true
-    }
+    },
+    "category": "spices"
   },
   {
     "id": "c-paprika",
@@ -2092,7 +2289,8 @@
       "vegan": true,
       "modifiedAIP": false,
       "lowCarb": true
-    }
+    },
+    "category": "spices"
   },
   {
     "id": "c-chili-powder",
@@ -2103,7 +2301,8 @@
       "vegan": true,
       "modifiedAIP": false,
       "lowCarb": true
-    }
+    },
+    "category": "spices"
   },
   {
     "id": "c-oregano",
@@ -2114,7 +2313,8 @@
       "vegan": true,
       "modifiedAIP": true,
       "lowCarb": true
-    }
+    },
+    "category": "spices"
   },
   {
     "id": "c-basil",
@@ -2125,7 +2325,8 @@
       "vegan": true,
       "modifiedAIP": true,
       "lowCarb": true
-    }
+    },
+    "category": "spices"
   },
   {
     "id": "c-turmeric",
@@ -2136,7 +2337,8 @@
       "vegan": true,
       "modifiedAIP": true,
       "lowCarb": true
-    }
+    },
+    "category": "spices"
   },
   {
     "id": "c-garlic-powder",
@@ -2147,7 +2349,8 @@
       "vegan": true,
       "modifiedAIP": true,
       "lowCarb": true
-    }
+    },
+    "category": "spices"
   },
   {
     "id": "c-onion-powder",
@@ -2158,7 +2361,8 @@
       "vegan": true,
       "modifiedAIP": true,
       "lowCarb": true
-    }
+    },
+    "category": "spices"
   },
   {
     "id": "c-bay-leaves",
@@ -2169,7 +2373,8 @@
       "vegan": true,
       "modifiedAIP": true,
       "lowCarb": true
-    }
+    },
+    "category": "spices"
   },
   {
     "id": "c-rosemary",
@@ -2180,7 +2385,8 @@
       "vegan": true,
       "modifiedAIP": true,
       "lowCarb": true
-    }
+    },
+    "category": "spices"
   },
   {
     "id": "c-thyme",
@@ -2191,66 +2397,82 @@
       "vegan": true,
       "modifiedAIP": true,
       "lowCarb": true
-    }
+    },
+    "category": "spices"
   },
   {
     "id": "c-paper-towels",
-    "name": "Paper Towels"
+    "name": "Paper Towels",
+    "category": "household"
   },
   {
     "id": "c-aluminum-foil",
-    "name": "Aluminum Foil"
+    "name": "Aluminum Foil",
+    "category": "household"
   },
   {
     "id": "c-plastic-wrap",
-    "name": "Plastic Wrap"
+    "name": "Plastic Wrap",
+    "category": "household"
   },
   {
     "id": "c-ziploc-bags",
-    "name": "Ziploc Bags"
+    "name": "Ziploc Bags",
+    "category": "household"
   },
   {
     "id": "c-hand-soap",
-    "name": "Hand Soap"
+    "name": "Hand Soap",
+    "category": "household"
   },
   {
     "id": "c-deodorant",
-    "name": "Deodorant"
+    "name": "Deodorant",
+    "category": "household"
   },
   {
     "id": "c-body-wash",
-    "name": "Body Wash"
+    "name": "Body Wash",
+    "category": "household"
   },
   {
     "id": "c-conditioner",
-    "name": "Conditioner"
+    "name": "Conditioner",
+    "category": "household"
   },
   {
     "id": "c-razors",
-    "name": "Razors"
+    "name": "Razors",
+    "category": "household"
   },
   {
     "id": "c-feminine-products",
-    "name": "Feminine Products"
+    "name": "Feminine Products",
+    "category": "household"
   },
   {
     "id": "c-diapers",
-    "name": "Diapers"
+    "name": "Diapers",
+    "category": "household"
   },
   {
     "id": "c-baby-wipes",
-    "name": "Baby Wipes"
+    "name": "Baby Wipes",
+    "category": "household"
   },
   {
     "id": "c-light-bulbs",
-    "name": "Light Bulbs"
+    "name": "Light Bulbs",
+    "category": "household"
   },
   {
     "id": "c-batteries",
-    "name": "Batteries"
+    "name": "Batteries",
+    "category": "household"
   },
   {
     "id": "c-air-freshener",
-    "name": "Air Freshener"
+    "name": "Air Freshener",
+    "category": "household"
   }
 ]

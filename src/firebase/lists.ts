@@ -21,7 +21,12 @@ export function subscribeToStaticList(
       onItems(
         snapshot.docs.map((d) => {
           const data = d.data()
-          return { catalogItemId: d.id, name: data.name, dietTags: data.dietTags } as StaticListItem
+          return {
+            catalogItemId: d.id,
+            name: data.name,
+            dietTags: data.dietTags,
+            category: data.category,
+          } as StaticListItem
         }),
       )
     },

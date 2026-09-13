@@ -1,10 +1,15 @@
+import { useMemo } from 'react'
 import { ThisWeekItemRow } from './ThisWeekItemRow'
-import type { DietRestriction, DietTags, ThisWeekItem } from '../../types/models'
+import { SortToggle } from '../lists/SortToggle'
+import { useSortMode } from '../../hooks/useSortMode'
+import { groupByCategory, sortAlphabetical } from '../../utils/groupByCategory'
+import type { Category, DietRestriction, DietTags, ThisWeekItem } from '../../types/models'
 import './ThisWeekList.css'
 
 interface Props {
   items: ThisWeekItem[]
   dietTagsById: Map<string, DietTags | undefined>
+  categoryById: Map<string, Category | undefined>
   activeRestrictions: DietRestriction[]
   onToggleChecked: (catalogItemId: string) => void
   onRemove: (catalogItemId: string) => void
@@ -14,12 +19,22 @@ interface Props {
 export function ThisWeekList({
   items,
   dietTagsById,
+  categoryById,
   activeRestrictions,
   onToggleChecked,
   onRemove,
   onClearChecked,
 }: Props) {
+  const [sortMode, setSortMode] = useSortMode()
   const checkedCount = items.filter((item) => item.checked).length
+
+  const groups = useMemo(
+    () =>
+      sortMode === 'category'
+        ? groupByCategory(items, (i) => categoryById.get(i.catalogItemId), (i) => i.name)
+        : sortAlphabetical(items, (i) => i.name),
+    [items, sortMode, categoryById],
+  )
 
   if (items.length === 0) {
     return (
@@ -41,15 +56,21 @@ export function ThisWeekList({
           </button>
         )}
       </div>
-      {items.map((item) => (
-        <ThisWeekItemRow
-          key={item.catalogItemId}
-          item={item}
-          dietTags={dietTagsById.get(item.catalogItemId)}
-          activeRestrictions={activeRestrictions}
-          onToggleChecked={() => onToggleChecked(item.catalogItemId)}
-          onRemove={() => onRemove(item.catalogItemId)}
-        />
+      <SortToggle value={sortMode} onChange={setSortMode} />
+      {groups.map((group) => (
+        <div key={group.key} className="this-week-list__group">
+          {sortMode === 'category' && <h4 className="this-week-list__group-label">{group.label}</h4>}
+          {group.items.map((item) => (
+            <ThisWeekItemRow
+              key={item.catalogItemId}
+              item={item}
+              dietTags={dietTagsById.get(item.catalogItemId)}
+              activeRestrictions={activeRestrictions}
+              onToggleChecked={() => onToggleChecked(item.catalogItemId)}
+              onRemove={() => onRemove(item.catalogItemId)}
+            />
+          ))}
+        </div>
       ))}
     </div>
   )

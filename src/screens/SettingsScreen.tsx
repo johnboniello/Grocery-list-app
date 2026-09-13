@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useAuth } from '../contexts/AuthContext'
 import { useHousehold } from '../contexts/HouseholdContext'
 import { createShareCode, revokeShareCode } from '../firebase/pairing'
-import { leaveHousehold, resyncCatalogFromSeed, revokeMember } from '../firebase/household'
+import { leaveHousehold, resyncFromSeed, revokeMember } from '../firebase/household'
 import './SettingsScreen.css'
 
 export function SettingsScreen() {
@@ -52,8 +52,8 @@ export function SettingsScreen() {
     setSyncing(true)
     setSyncMessage(null)
     try {
-      const changed = await resyncCatalogFromSeed(householdId, uid)
-      setSyncMessage(changed > 0 ? `Updated ${changed} catalog item${changed === 1 ? '' : 's'}.` : 'Catalog is already up to date.')
+      const changed = await resyncFromSeed(householdId, uid)
+      setSyncMessage(changed > 0 ? `Updated ${changed} item${changed === 1 ? '' : 's'}.` : 'Everything is already up to date.')
     } catch (err) {
       console.error('Failed to sync catalog', err)
       setSyncMessage('Could not update the catalog. Please try again.')

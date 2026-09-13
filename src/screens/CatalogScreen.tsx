@@ -4,7 +4,7 @@ import { CatalogSearchBar } from '../components/lists/CatalogSearchBar'
 import { useCatalog } from '../hooks/useCatalog'
 import { useThisWeekList } from '../hooks/useThisWeekList'
 import { useDietFilterContext } from '../contexts/DietFilterContext'
-import type { DietTags } from '../types/models'
+import type { Category, DietTags } from '../types/models'
 
 export function CatalogScreen() {
   const [query, setQuery] = useState('')
@@ -22,13 +22,19 @@ export function CatalogScreen() {
     [items, queryLower],
   )
   const rows = useMemo(
-    () => filtered.map((item) => ({ catalogItemId: item.id, name: item.name, dietTags: item.dietTags })),
+    () =>
+      filtered.map((item) => ({
+        catalogItemId: item.id,
+        name: item.name,
+        dietTags: item.dietTags,
+        category: item.category,
+      })),
     [filtered],
   )
 
-  const handleAddCustom = async (name: string, dietTags: DietTags | undefined) => {
+  const handleAddCustom = async (name: string, dietTags: DietTags | undefined, category: Category | undefined) => {
     try {
-      const item = await addCustomItem(name, dietTags)
+      const item = await addCustomItem(name, dietTags, category)
       addItem(item.id, item.name, 'catalog')
     } catch (err) {
       console.error('Failed to add custom item', err)
