@@ -79,7 +79,7 @@ see the mockup source in the artifact (`Main.dc.html`, `CatalogA.dc.html`, etc.
 via "Export" in the canvas, or ask Claude to pull the exact paths again).
 
 **`AppShell.tsx` / `AppShell.css`**: add a small brand mark (see §4 — the
-terracotta checkmark, 18px) to the left of the "Grocery List" title. Title
+recolored cart mark, 18px) to the left of the "Grocery List" title. Title
 font becomes `var(--serif)`, weight 600, 21px.
 
 **`TabBar.css`**: unchanged structurally (top border + accent on active tab);
@@ -116,35 +116,56 @@ title in `var(--serif)` 26px; buttons `border-radius: 14px`.
 - No new screens or flows — this is a re-skin of the existing five screens
   (Onboarding, This Week, High Frequency / Less Frequent, Catalog, Settings).
 
-## 4. App icon — decided: "Checklist Card"
+## 4. App icon — decided: the original cart mark, recolored on-theme
 
-Forest-green background (`#3f6b4a`), cream rounded card with three list
-lines, top one checked off in terracotta. **This is already applied**:
+Two earlier candidates (a checklist card and a basket) were tried and
+dropped — the shopping-cart graphic that was already in the app was
+preferred, just re-themed. **This is what's actually applied now**, all
+the way through, including the native Android launcher icon (see why that
+matters below):
 
-- `icon-src/icon.svg`, `icon-foreground.svg`, `icon-background.svg`,
-  `icon-maskable.svg` have been overwritten with this design (source is also
-  kept at `icon-src/candidate-c-checklist/` for reference).
+- Same cart geometry as the original `icon-src/icon.svg` (open-path
+  cart body + two wheel dots), recolored: cream background (`#faf6ee`,
+  matching the app's `--bg`), cart outline in forest green (`#3f6b4a`,
+  `--accent`), wheels filled terracotta (`#c9713f`, `--fail-border`) as a
+  small color accent. `icon-src/icon.svg`, `icon-foreground.svg`,
+  `icon-background.svg`, `icon-maskable.svg`, and `icon-src/splash.svg`
+  have all been overwritten with this version.
 - `public/icons/*` (icon-192, icon-512, maskable-512, apple-touch-icon,
-  favicon-32) and `assets/icon.png` / `assets/icon-foreground.png` /
-  `assets/icon-background.png` have already been regenerated to match — you
-  do not need to run `icon-src/generate.mjs` yourself, though re-running it
-  is harmless (it will just reproduce the same files from the same sources).
-- The rejected candidate, `icon-src/candidate-b-basket/` (cream background,
-  basket silhouette), is left in place only as a record — delete it whenever
-  you want.
-- `assets/splash.png` / `icon-src/splash.svg` are **untouched** — still the
-  old green/white cart mark. Worth a matching pass (cream background,
-  checklist mark, centered) before shipping, but not done here.
+  favicon-32), `assets/icon.png` / `icon-foreground.png` /
+  `icon-background.png` / `splash.png` have already been regenerated from
+  the new SVGs.
+- **The actual Android launcher icon has also been regenerated directly**:
+  `android/app/src/main/res/mipmap-{ldpi,mdpi,hdpi,xhdpi,xxhdpi,xxxhdpi}/`
+  each got new `ic_launcher.png`, `ic_launcher_round.png`,
+  `ic_launcher_foreground.png`, `ic_launcher_background.png` at the correct
+  per-density pixel size (36/48/72/96/144/192px), plus
+  `values/ic_launcher_background.xml` recolored to `#FAF6EE`. **This step
+  is why the icon didn't change on-device before** — updating
+  `icon-src/*.svg` and `assets/*.png` alone only feeds the normal
+  Capacitor asset pipeline (`@capacitor/assets`, not installed in this
+  project) or a manual re-run of it; neither happened automatically, and
+  the committed `android/` project (what actually gets built and installed)
+  was never touched. It is now.
+- The two earlier candidates are still sitting in
+  `icon-src/candidate-b-basket/` and `icon-src/candidate-c-checklist/` as
+  dead reference material — delete both whenever you want, they're no
+  longer used anywhere.
 
-**In-app mark**: the small brand mark in the header (next to "Grocery List"),
-in the Settings header, and the logo on the Onboarding screen has been
-updated to match — a filled terracotta circle with a cream checkmark
-(the same checkmark used inside the icon's card), simple enough to read at
-~18px:
+**To see it on your device**: rebuild/resync the Android project as you
+normally would (`npx cap sync android` then rebuild from Android
+Studio/Gradle) so the app picks up the updated `android/` resources — no
+icon-generation step is needed first, since the `mipmap-*` PNGs are
+already in place.
+
+**In-app mark**: the small brand mark in the header (next to "Grocery
+List"), the Settings header, and the Onboarding logo now use the same
+recolored cart glyph, simplified to a single-color outline for its small
+size:
 
 ```html
-<svg width="18" height="18" viewBox="0 0 100 100"><circle cx="50" cy="50" r="42" fill="#c9713f"/><path d="M32 52 L44 64 L70 36" fill="none" stroke="#fdf9f0" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<svg width="18" height="18" viewBox="-140 -110 300 280"><g fill="none" stroke="#3f6b4a" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"><path d="M -120 -90 L -95 -90 L -55 90 L 110 90 L 140 -30 L -80 -30" /><circle cx="-40" cy="130" r="18" fill="#c9713f" stroke="none"/><circle cx="80" cy="130" r="18" fill="#c9713f" stroke="none"/></g></svg>
 ```
 
-This replaces the basket mark used in the previous draft of this document —
-see the updated mockups (page 1 of the canvas) for it in context.
+See the updated mockups (page 1 of the canvas linked above) for it in
+context.

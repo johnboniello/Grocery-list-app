@@ -17,16 +17,12 @@ export function AppShell({ children }: Props) {
       <header className="app-shell__header">
         <div className="app-shell__title-row">
           <div className="app-shell__brand">
-            <svg width="18" height="18" viewBox="0 0 100 100">
-              <circle cx="50" cy="50" r="42" fill="#c9713f" />
-              <path
-                d="M32 52 L44 64 L70 36"
-                fill="none"
-                stroke="#fdf9f0"
-                strokeWidth="10"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              ></path>
+            <svg width="18" height="18" viewBox="-140 -110 300 280">
+              <g fill="none" stroke="#3f6b4a" strokeWidth="22" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M -120 -90 L -95 -90 L -55 90 L 110 90 L 140 -30 L -80 -30" />
+                <circle cx="-40" cy="130" r="18" fill="#c9713f" stroke="none"></circle>
+                <circle cx="80" cy="130" r="18" fill="#c9713f" stroke="none"></circle>
+              </g>
             </svg>
             <h1 className="app-shell__title">Grocery List</h1>
           </div>
