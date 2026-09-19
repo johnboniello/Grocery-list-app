@@ -3,6 +3,7 @@ import { ThisWeekItemRow } from './ThisWeekItemRow'
 import { SortToggle } from '../lists/SortToggle'
 import { useSortMode } from '../../hooks/useSortMode'
 import { groupByCategory, sortAlphabetical } from '../../utils/groupByCategory'
+import type { CountsPatch } from '../../utils/thisWeekCounts'
 import type { Category, DietRestriction, DietTags, ThisWeekItem } from '../../types/models'
 import './ThisWeekList.css'
 
@@ -13,6 +14,7 @@ interface Props {
   activeRestrictions: DietRestriction[]
   onToggleChecked: (catalogItemId: string) => void
   onSetNote: (catalogItemId: string, note: string) => void
+  onSetCounts: (catalogItemId: string, patch: CountsPatch) => void
   onRemove: (catalogItemId: string) => void
   onClearChecked: () => void
 }
@@ -24,6 +26,7 @@ export function ThisWeekList({
   activeRestrictions,
   onToggleChecked,
   onSetNote,
+  onSetCounts,
   onRemove,
   onClearChecked,
 }: Props) {
@@ -70,6 +73,7 @@ export function ThisWeekList({
               activeRestrictions={activeRestrictions}
               onToggleChecked={() => onToggleChecked(item.catalogItemId)}
               onSetNote={(note) => onSetNote(item.catalogItemId, note)}
+              onSetCounts={(patch) => onSetCounts(item.catalogItemId, patch)}
               onRemove={() => onRemove(item.catalogItemId)}
             />
           ))}

@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react'
 import { computeCompliance } from '../../utils/dietCompliance'
+import { MAX_QUANTITY, type CountsPatch } from '../../utils/thisWeekCounts'
 import type { DietRestriction, DietTags, ThisWeekItem } from '../../types/models'
 import './ThisWeekItemRow.css'
 
@@ -11,27 +12,81 @@ interface Props {
   activeRestrictions: DietRestriction[]
   onToggleChecked: () => void
   onSetNote: (note: string) => void
+  onSetCounts: (patch: CountsPatch) => void
   onRemove: () => void
 }
 
-export function ThisWeekItemRow({ item, dietTags, activeRestrictions, onToggleChecked, onSetNote, onRemove }: Props) {
-  const status = computeCompliance(dietTags, activeRestrictions)
-  const [editingNote, setEditingNote] = useState(false)
-  const [draft, setDraft] = useState('')
-  // Enter/Escape close the editor themselves; this stops the blur that follows from saving a second time.
-  const finished = useRef(false)
+interface StepperProps {
+  label: string
+  itemName: string
+  value: number
+  min: number
+  max: number
+  suffix?: string
+  onChange: (value: number) => void
+}
 
-  const openNoteEditor = () => {
-    finished.current = false
+function Stepper({ label, itemName, value, min, max, suffix, onChange }: StepperProps) {
+  return (
+    <div className="this-week-row__stepper">
+      <span className="this-week-row__stepper-label">{label}</span>
+      <button
+        type="button"
+        className="this-week-row__stepper-btn"
+        aria-label={`Decrease ${label.toLowerCase()} for ${itemName}`}
+        disabled={value <= min}
+        onClick={() => onChange(value - 1)}
+      >
+        −
+      </button>
+      <span className="this-week-row__stepper-value" aria-live="polite">
+        {value}
+      </span>
+      <button
+        type="button"
+        className="this-week-row__stepper-btn"
+        aria-label={`Increase ${label.toLowerCase()} for ${itemName}`}
+        disabled={value >= max}
+        onClick={() => onChange(value + 1)}
+      >
+        +
+      </button>
+      {suffix && <span className="this-week-row__stepper-suffix">{suffix}</span>}
+    </div>
+  )
+}
+
+export function ThisWeekItemRow({ item, dietTags, activeRestrictions, onToggleChecked, onSetNote, onSetCounts, onRemove }: Props) {
+  const status = computeCompliance(dietTags, activeRestrictions)
+  const [open, setOpen] = useState(false)
+  const [draft, setDraft] = useState('')
+  // What the note currently is on the server, so a blur right after Enter doesn't save the same text twice.
+  const lastSaved = useRef('')
+  // Set while closing so the blur caused by Escape (or by unmounting) can't save a discarded draft.
+  const closing = useRef(false)
+
+  const quantity = item.quantity ?? 1
+  const found = item.found ?? 0
+  const partial = quantity > 1 && found > 0 && found < quantity
+
+  const openPanel = () => {
+    closing.current = false
+    lastSaved.current = item.note ?? ''
     setDraft(item.note ?? '')
-    setEditingNote(true)
+    setOpen(true)
   }
 
-  const closeNoteEditor = (save: boolean) => {
-    if (finished.current) return
-    finished.current = true
-    if (save && draft.trim() !== (item.note ?? '')) onSetNote(draft)
-    setEditingNote(false)
+  const commitNote = () => {
+    if (closing.current) return
+    if (draft.trim() === lastSaved.current) return
+    lastSaved.current = draft.trim()
+    onSetNote(draft)
+  }
+
+  const closePanel = (save: boolean) => {
+    if (save) commitNote()
+    closing.current = true
+    setOpen(false)
   }
 
   return (
@@ -57,12 +112,18 @@ export function ThisWeekItemRow({ item, dietTags, activeRestrictions, onToggleCh
           </span>
         </span>
         <span className="this-week-row__name">{item.name}</span>
+        {quantity > 1 && (
+          <span className={`this-week-row__qty${partial ? ' this-week-row__qty--partial' : ''}`}>
+            {partial ? `${found} of ${quantity}` : `×${quantity}`}
+          </span>
+        )}
       </label>
       <button
         type="button"
         className="this-week-row__note-btn"
-        aria-label={`${item.note ? 'Edit' : 'Add'} note for ${item.name}`}
-        onClick={openNoteEditor}
+        aria-label={`Edit note or quantity for ${item.name}`}
+        aria-expanded={open}
+        onClick={() => (open ? closePanel(true) : openPanel())}
       >
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
@@ -80,26 +141,50 @@ export function ThisWeekItemRow({ item, dietTags, activeRestrictions, onToggleCh
           <line x1="6" y1="6" x2="18" y2="18"></line>
         </svg>
       </button>
-      {editingNote ? (
-        <input
-          type="text"
-          className="this-week-row__note-input"
-          value={draft}
-          maxLength={NOTE_MAX_LENGTH}
-          placeholder="e.g. chunky Skippy"
-          aria-label={`Note for ${item.name}`}
-          enterKeyHint="done"
-          autoFocus
-          onChange={(e) => setDraft(e.target.value)}
-          onBlur={() => closeNoteEditor(true)}
-          onKeyDown={(e) => {
-            if (e.key === 'Enter') closeNoteEditor(true)
-            else if (e.key === 'Escape') closeNoteEditor(false)
-          }}
-        />
+      {open ? (
+        <div className="this-week-row__panel">
+          <Stepper
+            label="Quantity"
+            itemName={item.name}
+            value={quantity}
+            min={1}
+            max={MAX_QUANTITY}
+            onChange={(value) => onSetCounts({ quantity: value })}
+          />
+          {quantity > 1 && (
+            <Stepper
+              label="Found"
+              itemName={item.name}
+              value={found}
+              min={0}
+              max={quantity}
+              suffix={`of ${quantity}`}
+              onChange={(value) => onSetCounts({ found: value })}
+            />
+          )}
+          <input
+            type="text"
+            className="this-week-row__note-input"
+            value={draft}
+            maxLength={NOTE_MAX_LENGTH}
+            placeholder="Note, e.g. chunky Skippy"
+            aria-label={`Note for ${item.name}`}
+            enterKeyHint="done"
+            autoFocus
+            onChange={(e) => setDraft(e.target.value)}
+            onBlur={commitNote}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') closePanel(true)
+              else if (e.key === 'Escape') closePanel(false)
+            }}
+          />
+          <button type="button" className="this-week-row__done" onClick={() => closePanel(true)}>
+            Done
+          </button>
+        </div>
       ) : (
         item.note && (
-          <button type="button" className="this-week-row__note" onClick={openNoteEditor}>
+          <button type="button" className="this-week-row__note" onClick={openPanel}>
             {item.note}
           </button>
         )

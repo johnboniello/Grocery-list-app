@@ -93,4 +93,8 @@ export interface ThisWeekItem {
   checkedAt?: number
   /** Optional free-text detail for this week's purchase, e.g. "chunky Skippy". */
   note?: string
+  /** How many are needed. Absent means 1. */
+  quantity?: number
+  /** How many have been found so far. Absent means 0; only tracked when quantity > 1. */
+  found?: number
 }

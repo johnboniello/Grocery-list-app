@@ -7,8 +7,10 @@ import {
   removeThisWeekItem,
   subscribeToThisWeek,
   toggleThisWeekChecked,
+  updateThisWeekCounts,
   updateThisWeekNote,
 } from '../firebase/thisWeek'
+import { applyCounts, toggleCounts, type Counts, type CountsPatch } from '../utils/thisWeekCounts'
 import type { SourceList, ThisWeekItem } from '../types/models'
 
 export function useThisWeekList() {
@@ -36,16 +38,37 @@ export function useThisWeekList() {
     [householdId, uid, addedIds],
   )
 
+  /** Only sends `checked` when it actually changed, so checkedBy/checkedAt aren't rewritten on every count tweak. */
+  const writeCounts = useCallback(
+    (item: ThisWeekItem, next: Counts) => {
+      if (!householdId || !uid) return Promise.resolve()
+      const checked = next.checked === item.checked ? undefined : next.checked
+      return updateThisWeekCounts(householdId, item.catalogItemId, { quantity: next.quantity, found: next.found, checked }, uid)
+    },
+    [householdId, uid],
+  )
+
   const toggleChecked = useCallback(
     (catalogItemId: string) => {
       if (!householdId || !uid) return
       const item = items.find((i) => i.catalogItemId === catalogItemId)
       if (!item) return
-      toggleThisWeekChecked(householdId, catalogItemId, !item.checked, uid).catch((err: unknown) =>
-        console.error('Failed to toggle item', err),
-      )
+      const write =
+        (item.quantity ?? 1) > 1
+          ? writeCounts(item, toggleCounts(item))
+          : toggleThisWeekChecked(householdId, catalogItemId, !item.checked, uid)
+      write.catch((err: unknown) => console.error('Failed to toggle item', err))
     },
-    [householdId, uid, items],
+    [householdId, uid, items, writeCounts],
+  )
+
+  const setCounts = useCallback(
+    (catalogItemId: string, patch: CountsPatch) => {
+      const item = items.find((i) => i.catalogItemId === catalogItemId)
+      if (!item) return
+      writeCounts(item, applyCounts(item, patch)).catch((err: unknown) => console.error('Failed to update counts', err))
+    },
+    [items, writeCounts],
   )
 
   const setNote = useCallback(
@@ -75,5 +98,5 @@ export function useThisWeekList() {
     )
   }, [householdId, items])
 
-  return { items, addItem, toggleChecked, setNote, removeItem, clearChecked, addedIds }
+  return { items, addItem, toggleChecked, setNote, setCounts, removeItem, clearChecked, addedIds }
 }

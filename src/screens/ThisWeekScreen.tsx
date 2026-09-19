@@ -7,7 +7,7 @@ import { useDietFilterContext } from '../contexts/DietFilterContext'
 import type { Category, DietTags } from '../types/models'
 
 export function ThisWeekScreen() {
-  const { items, toggleChecked, setNote, removeItem, clearChecked } = useThisWeekList()
+  const { items, toggleChecked, setNote, setCounts, removeItem, clearChecked } = useThisWeekList()
   const { items: catalogItems } = useCatalog()
   const highFrequency = useStaticList('highFrequency')
   const lessFrequent = useStaticList('lessFrequent')
@@ -39,6 +39,7 @@ export function ThisWeekScreen() {
       activeRestrictions={activeRestrictions}
       onToggleChecked={toggleChecked}
       onSetNote={setNote}
+      onSetCounts={setCounts}
       onRemove={removeItem}
       onClearChecked={clearChecked}
     />

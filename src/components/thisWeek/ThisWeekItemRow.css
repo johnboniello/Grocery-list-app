@@ -88,13 +88,94 @@
   text-decoration: line-through;
 }
 
-/* Note line and editor sit on their own line under the name, aligned with it (checkbox 24px + gap 12px). */
+.this-week-row__qty {
+  flex-shrink: 0;
+  margin-left: -4px;
+  padding: 1px 8px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Fewer found than needed: uses the terracotta "attention" colors so it stands out at a glance. */
+.this-week-row__qty--partial {
+  border-color: var(--fail-border);
+  color: var(--fail-text);
+}
+
+/* Note line and the edit panel sit on their own line under the name, aligned with it (checkbox 24px + gap 12px). */
 .this-week-row__note,
-.this-week-row__note-input {
+.this-week-row__panel {
   flex-basis: 100%;
   margin: 6px 0 0 36px;
   max-width: calc(100% - 36px);
   box-sizing: border-box;
+}
+
+.this-week-row__panel {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.this-week-row__stepper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.this-week-row__stepper-label {
+  width: 64px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.this-week-row__stepper-btn {
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.this-week-row__stepper-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.this-week-row__stepper-value {
+  min-width: 24px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.this-week-row__stepper-suffix {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.this-week-row__done {
+  align-self: flex-end;
+  border: none;
+  border-radius: 10px;
+  background: var(--accent);
+  color: var(--surface);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 7px 16px;
+  cursor: pointer;
 }
 
 .this-week-row__note {
@@ -110,6 +191,8 @@
 }
 
 .this-week-row__note-input {
+  width: 100%;
+  box-sizing: border-box;
   border: 1px solid var(--border);
   border-radius: 10px;
   background: var(--surface);
