@@ -1,5 +1,6 @@
 .this-week-row {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   border: 1px solid var(--border);
@@ -83,6 +84,42 @@
   font-size: 15px;
 }
 
+.this-week-row--checked .this-week-row__note {
+  text-decoration: line-through;
+}
+
+/* Note line and editor sit on their own line under the name, aligned with it (checkbox 24px + gap 12px). */
+.this-week-row__note,
+.this-week-row__note-input {
+  flex-basis: 100%;
+  margin: 6px 0 0 36px;
+  max-width: calc(100% - 36px);
+  box-sizing: border-box;
+}
+
+.this-week-row__note {
+  border: none;
+  background: none;
+  padding: 0;
+  font: inherit;
+  font-size: 13px;
+  color: var(--text-muted);
+  text-align: left;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+}
+
+.this-week-row__note-input {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  font-size: 14px;
+  padding: 8px 10px;
+}
+
+.this-week-row__note-btn,
 .this-week-row__remove {
   border: none;
   background: none;

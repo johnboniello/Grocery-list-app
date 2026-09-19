@@ -91,4 +91,6 @@ export interface ThisWeekItem {
   checked: boolean
   addedAt: number
   checkedAt?: number
+  /** Optional free-text detail for this week's purchase, e.g. "chunky Skippy". */
+  note?: string
 }

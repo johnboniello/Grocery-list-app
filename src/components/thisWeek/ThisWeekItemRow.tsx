@@ -1,17 +1,38 @@
+import { useRef, useState } from 'react'
 import { computeCompliance } from '../../utils/dietCompliance'
 import type { DietRestriction, DietTags, ThisWeekItem } from '../../types/models'
 import './ThisWeekItemRow.css'
+
+const NOTE_MAX_LENGTH = 80
 
 interface Props {
   item: ThisWeekItem
   dietTags: DietTags | undefined
   activeRestrictions: DietRestriction[]
   onToggleChecked: () => void
+  onSetNote: (note: string) => void
   onRemove: () => void
 }
 
-export function ThisWeekItemRow({ item, dietTags, activeRestrictions, onToggleChecked, onRemove }: Props) {
+export function ThisWeekItemRow({ item, dietTags, activeRestrictions, onToggleChecked, onSetNote, onRemove }: Props) {
   const status = computeCompliance(dietTags, activeRestrictions)
+  const [editingNote, setEditingNote] = useState(false)
+  const [draft, setDraft] = useState('')
+  // Enter/Escape close the editor themselves; this stops the blur that follows from saving a second time.
+  const finished = useRef(false)
+
+  const openNoteEditor = () => {
+    finished.current = false
+    setDraft(item.note ?? '')
+    setEditingNote(true)
+  }
+
+  const closeNoteEditor = (save: boolean) => {
+    if (finished.current) return
+    finished.current = true
+    if (save && draft.trim() !== (item.note ?? '')) onSetNote(draft)
+    setEditingNote(false)
+  }
 
   return (
     <div
@@ -39,6 +60,17 @@ export function ThisWeekItemRow({ item, dietTags, activeRestrictions, onToggleCh
       </label>
       <button
         type="button"
+        className="this-week-row__note-btn"
+        aria-label={`${item.note ? 'Edit' : 'Add'} note for ${item.name}`}
+        onClick={openNoteEditor}
+      >
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+          <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+        </svg>
+      </button>
+      <button
+        type="button"
         className="this-week-row__remove"
         aria-label={`Remove ${item.name}`}
         onClick={onRemove}
@@ -48,6 +80,30 @@ export function ThisWeekItemRow({ item, dietTags, activeRestrictions, onToggleCh
           <line x1="6" y1="6" x2="18" y2="18"></line>
         </svg>
       </button>
+      {editingNote ? (
+        <input
+          type="text"
+          className="this-week-row__note-input"
+          value={draft}
+          maxLength={NOTE_MAX_LENGTH}
+          placeholder="e.g. chunky Skippy"
+          aria-label={`Note for ${item.name}`}
+          enterKeyHint="done"
+          autoFocus
+          onChange={(e) => setDraft(e.target.value)}
+          onBlur={() => closeNoteEditor(true)}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') closeNoteEditor(true)
+            else if (e.key === 'Escape') closeNoteEditor(false)
+          }}
+        />
+      ) : (
+        item.note && (
+          <button type="button" className="this-week-row__note" onClick={openNoteEditor}>
+            {item.note}
+          </button>
+        )
+      )}
     </div>
   )
 }

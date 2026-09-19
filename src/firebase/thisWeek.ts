@@ -1,6 +1,7 @@
 import {
   collection,
   deleteDoc,
+  deleteField,
   doc,
   onSnapshot,
   orderBy,
@@ -37,6 +38,7 @@ export function subscribeToThisWeek(
             checked: data.checked,
             addedAt: (data.addedAt as Timestamp | undefined)?.toMillis() ?? Date.now(),
             checkedAt: (data.checkedAt as Timestamp | undefined)?.toMillis(),
+            note: data.note,
           } as ThisWeekItem
         }),
       )
@@ -72,6 +74,14 @@ export async function toggleThisWeekChecked(
     checked,
     checkedBy: checked ? uid : null,
     checkedAt: checked ? serverTimestamp() : null,
+  })
+}
+
+/** An empty note removes the field entirely rather than storing an empty string. */
+export async function updateThisWeekNote(householdId: string, itemId: string, note: string): Promise<void> {
+  const trimmed = note.trim()
+  await updateDoc(doc(db, 'households', householdId, 'thisWeek', itemId), {
+    note: trimmed ? trimmed : deleteField(),
   })
 }
 

@@ -7,6 +7,7 @@ import {
   removeThisWeekItem,
   subscribeToThisWeek,
   toggleThisWeekChecked,
+  updateThisWeekNote,
 } from '../firebase/thisWeek'
 import type { SourceList, ThisWeekItem } from '../types/models'
 
@@ -47,6 +48,16 @@ export function useThisWeekList() {
     [householdId, uid, items],
   )
 
+  const setNote = useCallback(
+    (catalogItemId: string, note: string) => {
+      if (!householdId) return
+      updateThisWeekNote(householdId, catalogItemId, note).catch((err: unknown) =>
+        console.error('Failed to update note', err),
+      )
+    },
+    [householdId],
+  )
+
   const removeItem = useCallback(
     (catalogItemId: string) => {
       if (!householdId) return
@@ -64,5 +75,5 @@ export function useThisWeekList() {
     )
   }, [householdId, items])
 
-  return { items, addItem, toggleChecked, removeItem, clearChecked, addedIds }
+  return { items, addItem, toggleChecked, setNote, removeItem, clearChecked, addedIds }
 }

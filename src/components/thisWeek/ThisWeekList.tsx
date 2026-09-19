@@ -12,6 +12,7 @@ interface Props {
   categoryById: Map<string, Category | undefined>
   activeRestrictions: DietRestriction[]
   onToggleChecked: (catalogItemId: string) => void
+  onSetNote: (catalogItemId: string, note: string) => void
   onRemove: (catalogItemId: string) => void
   onClearChecked: () => void
 }
@@ -22,6 +23,7 @@ export function ThisWeekList({
   categoryById,
   activeRestrictions,
   onToggleChecked,
+  onSetNote,
   onRemove,
   onClearChecked,
 }: Props) {
@@ -67,6 +69,7 @@ export function ThisWeekList({
               dietTags={dietTagsById.get(item.catalogItemId)}
               activeRestrictions={activeRestrictions}
               onToggleChecked={() => onToggleChecked(item.catalogItemId)}
+              onSetNote={(note) => onSetNote(item.catalogItemId, note)}
               onRemove={() => onRemove(item.catalogItemId)}
             />
           ))}
