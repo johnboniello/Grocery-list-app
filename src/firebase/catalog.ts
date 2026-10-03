@@ -1,4 +1,4 @@
-import { collection, doc, onSnapshot, orderBy, query, serverTimestamp, setDoc } from 'firebase/firestore'
+import { collection, doc, getDoc, onSnapshot, orderBy, query, serverTimestamp, setDoc } from 'firebase/firestore'
 import { db } from './config'
 import type { Category, CatalogItem, DietTags } from '../types/models'
 
@@ -16,17 +16,19 @@ export function subscribeToCatalog(
     q,
     (snapshot) => {
       onItems(
-        snapshot.docs.map((d) => {
-          const data = d.data()
-          return {
-            id: d.id,
-            name: data.name,
-            nameLower: data.nameLower,
-            source: data.source,
-            dietTags: data.dietTags,
-            category: data.category,
-          } as CatalogItem
-        }),
+        snapshot.docs
+          .filter((d) => d.data().deleted !== true)
+          .map((d) => {
+            const data = d.data()
+            return {
+              id: d.id,
+              name: data.name,
+              nameLower: data.nameLower,
+              source: data.source,
+              dietTags: data.dietTags,
+              category: data.category,
+            } as CatalogItem
+          }),
       )
     },
     onError,
@@ -42,7 +44,11 @@ function slugify(name: string): string {
   return slug ? `custom-${slug}` : `custom-${Date.now()}`
 }
 
-/** Adds a new catalog item, or merges onto an existing one with the same generated id (dedup by name). */
+/**
+ * Adds a new catalog item, or merges onto an existing one with the same generated id (dedup by name).
+ * An item renamed since it was added keeps its old id, so if that id now holds a different name,
+ * the new item gets an id of its own rather than merging onto (and renaming back) the old one.
+ */
 export async function addCustomCatalogItem(
   householdId: string,
   uid: string,
@@ -51,7 +57,9 @@ export async function addCustomCatalogItem(
   category: Category | undefined,
 ): Promise<{ id: string; name: string }> {
   const trimmed = name.trim()
-  const id = slugify(trimmed)
+  let id = slugify(trimmed)
+  const existing = await getDoc(doc(db, 'households', householdId, 'catalog', id))
+  if (existing.exists() && existing.data().nameLower !== trimmed.toLowerCase()) id = `${id}-${Date.now()}`
   await setDoc(
     doc(db, 'households', householdId, 'catalog', id),
     {

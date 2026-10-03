@@ -71,7 +71,7 @@
   color: var(--text-muted);
 }
 
-.item-row__category {
+.item-row__section {
   margin: 8px 0 4px;
   padding: 10px;
   border: 1px solid var(--border);
@@ -86,4 +86,31 @@
   text-transform: uppercase;
   letter-spacing: 0.03em;
   margin: 0;
+  display: block;
+}
+
+.item-row__name-input {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 6px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text);
+  font: inherit;
+  font-size: 14px;
+  padding: 8px 10px;
+}
+
+.item-row__delete {
+  margin: 4px 0;
+  border: 1px solid var(--fail-border);
+  border-radius: 8px;
+  background: var(--fail-bg);
+  color: var(--fail-text);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 7px 14px;
+  cursor: pointer;
 }

@@ -20,6 +20,8 @@ interface Props {
   onAdd: (catalogItemId: string, name: string) => void
   onEditTags?: (catalogItemId: string, dietTags: DietTags) => void
   onEditCategory?: (catalogItemId: string, category: Category | undefined) => void
+  onRename?: (catalogItemId: string, name: string) => void
+  onDelete?: (catalogItemId: string) => void
   emptyMessage?: string
 }
 
@@ -30,6 +32,8 @@ export function ItemListView({
   onAdd,
   onEditTags,
   onEditCategory,
+  onRename,
+  onDelete,
   emptyMessage,
 }: Props) {
   const [sortMode, setSortMode] = useSortMode()
@@ -65,6 +69,8 @@ export function ItemListView({
               onEditCategory={
                 onEditCategory ? (category) => onEditCategory(row.catalogItemId, category) : undefined
               }
+              onRename={onRename ? (name) => onRename(row.catalogItemId, name) : undefined}
+              onDelete={onDelete ? () => onDelete(row.catalogItemId) : undefined}
             />
           ))}
         </div>

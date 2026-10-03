@@ -1,6 +1,7 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
 import { AppShell } from './components/layout/AppShell'
 import { DietFilterProvider } from './contexts/DietFilterContext'
+import { CategoriesProvider } from './contexts/CategoriesContext'
 import { AuthProvider, useAuth } from './contexts/AuthContext'
 import { HouseholdProvider, useHousehold } from './contexts/HouseholdContext'
 import { ThisWeekScreen } from './screens/ThisWeekScreen'
@@ -54,7 +55,9 @@ function App() {
     <AuthProvider>
       <HouseholdProvider>
         <DietFilterProvider>
-          <AppRoutes />
+          <CategoriesProvider>
+            <AppRoutes />
+          </CategoriesProvider>
         </DietFilterProvider>
       </HouseholdProvider>
     </AuthProvider>

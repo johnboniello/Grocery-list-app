@@ -2,7 +2,6 @@ import { useCallback, useEffect, useState } from 'react'
 import { useHousehold } from '../contexts/HouseholdContext'
 import { useAuth } from '../contexts/AuthContext'
 import { addCustomCatalogItem, subscribeToCatalog, updateCatalogItemTags } from '../firebase/catalog'
-import { updateItemCategory } from '../firebase/lists'
 import type { Category, CatalogItem, DietTags } from '../types/models'
 
 export function useCatalog() {
@@ -37,15 +36,5 @@ export function useCatalog() {
     [householdId],
   )
 
-  const updateCategory = useCallback(
-    (itemId: string, category: Category | undefined) => {
-      if (!householdId) return
-      updateItemCategory(householdId, 'catalog', itemId, category).catch((err: unknown) =>
-        console.error('Failed to update category', err),
-      )
-    },
-    [householdId],
-  )
-
-  return { items, addCustomItem, updateDietTags, updateCategory }
+  return { items, addCustomItem, updateDietTags }
 }

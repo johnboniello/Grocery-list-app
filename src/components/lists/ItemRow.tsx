@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useId, useState } from 'react'
 import { computeCompliance } from '../../utils/dietCompliance'
 import { DietTagEditor } from '../diet/DietTagEditor'
 import { CategoryPicker } from './CategoryPicker'
@@ -14,6 +14,8 @@ interface Props {
   onAdd: () => void
   onEditTags?: (dietTags: DietTags) => void
   onEditCategory?: (category: Category | undefined) => void
+  onRename?: (name: string) => void
+  onDelete?: () => void
 }
 
 export function ItemRow({
@@ -25,9 +27,29 @@ export function ItemRow({
   onAdd,
   onEditTags,
   onEditCategory,
+  onRename,
+  onDelete,
 }: Props) {
   const [editing, setEditing] = useState(false)
+  const [nameDraft, setNameDraft] = useState(name)
+  const nameInputId = useId()
   const status = computeCompliance(dietTags, activeRestrictions)
+  const canEdit = Boolean(onEditTags || onEditCategory || onRename || onDelete)
+
+  const toggleEditing = () => {
+    if (!editing) setNameDraft(name)
+    setEditing((v) => !v)
+  }
+
+  const commitName = () => {
+    const trimmed = nameDraft.trim()
+    if (!trimmed) setNameDraft(name)
+    else if (trimmed !== name) onRename?.(trimmed)
+  }
+
+  const handleDelete = () => {
+    if (window.confirm(`Delete "${name}"? It will also come off this week's list.`)) onDelete?.()
+  }
 
   return (
     <div className="item-row-wrapper">
@@ -36,13 +58,13 @@ export function ItemRow({
           <span className="item-row__name">{name}</span>
           {isAdded && <span className="item-row__added">Added</span>}
         </button>
-        {(onEditTags || onEditCategory) && (
+        {canEdit && (
           <button
             type="button"
             className="item-row__edit"
-            aria-label={`Edit category and diet tags for ${name}`}
+            aria-label={`Edit ${name}`}
             aria-expanded={editing}
-            onClick={() => setEditing((v) => !v)}
+            onClick={toggleEditing}
           >
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
@@ -51,13 +73,38 @@ export function ItemRow({
           </button>
         )}
       </div>
+      {editing && onRename && (
+        <div className="item-row__section">
+          <label className="item-row__section-label" htmlFor={nameInputId}>
+            Name
+          </label>
+          <input
+            id={nameInputId}
+            type="text"
+            className="item-row__name-input"
+            value={nameDraft}
+            enterKeyHint="done"
+            onChange={(e) => setNameDraft(e.target.value)}
+            onBlur={commitName}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') e.currentTarget.blur()
+              else if (e.key === 'Escape') setNameDraft(name)
+            }}
+          />
+        </div>
+      )}
       {editing && onEditCategory && (
-        <div className="item-row__category">
+        <div className="item-row__section">
           <p className="item-row__section-label">Category</p>
           <CategoryPicker value={category} onChange={onEditCategory} />
         </div>
       )}
       {editing && onEditTags && <DietTagEditor dietTags={dietTags} onChange={onEditTags} />}
+      {editing && onDelete && (
+        <button type="button" className="item-row__delete" onClick={handleDelete}>
+          Delete item
+        </button>
+      )}
     </div>
   )
 }

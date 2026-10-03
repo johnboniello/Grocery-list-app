@@ -1,4 +1,4 @@
-import { CATEGORIES, CATEGORY_LABELS, type Category } from '../types/models'
+import { CATEGORIES, categoryLabel, isBuiltInCategory, type Category } from '../types/models'
 
 export interface ItemGroup<T> {
   key: string
@@ -6,7 +6,10 @@ export interface ItemGroup<T> {
   items: T[]
 }
 
-/** Alphabetical within each category group; groups ordered by CATEGORIES, uncategorized last. */
+/**
+ * Alphabetical within each category group. Groups are ordered built-ins first (in CATEGORIES
+ * order), then the household's own categories alphabetically, then uncategorized last.
+ */
 export function groupByCategory<T>(
   items: T[],
   getCategory: (item: T) => Category | undefined,
@@ -18,12 +21,15 @@ export function groupByCategory<T>(
     if (!buckets.has(key)) buckets.set(key, [])
     buckets.get(key)!.push(item)
   }
-  const order: (Category | 'other')[] = [...CATEGORIES, 'other']
+  const custom = [...buckets.keys()]
+    .filter((key) => key !== 'other' && !isBuiltInCategory(key))
+    .sort((a, b) => a.localeCompare(b))
+  const order: (Category | 'other')[] = [...CATEGORIES, ...custom, 'other']
   return order
     .filter((key) => buckets.has(key))
     .map((key) => ({
       key,
-      label: key === 'other' ? 'Other' : CATEGORY_LABELS[key],
+      label: key === 'other' ? 'Other' : categoryLabel(key),
       items: [...buckets.get(key)!].sort((a, b) => getName(a).localeCompare(getName(b))),
     }))
 }

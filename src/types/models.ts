@@ -24,7 +24,7 @@ export const DIET_LABELS: Record<DietRestriction, string> = {
 /** true = known to meet the restriction, false = known to fail it, missing = not yet tagged. */
 export type DietTags = Partial<Record<DietRestriction, boolean>>
 
-export type Category =
+export type BuiltInCategory =
   | 'produce'
   | 'dairy'
   | 'meat'
@@ -37,8 +37,14 @@ export type Category =
   | 'spices'
   | 'household'
 
+/**
+ * A built-in category's key, or the name of one the household made up (e.g. "Deli"). Custom
+ * categories have no list of their own: they exist as long as some item is filed under them.
+ */
+export type Category = string
+
 /** Display order for category pickers and category-sorted lists. */
-export const CATEGORIES: Category[] = [
+export const CATEGORIES: BuiltInCategory[] = [
   'produce',
   'dairy',
   'meat',
@@ -52,7 +58,7 @@ export const CATEGORIES: Category[] = [
   'household',
 ]
 
-export const CATEGORY_LABELS: Record<Category, string> = {
+export const CATEGORY_LABELS: Record<BuiltInCategory, string> = {
   produce: 'Produce',
   dairy: 'Dairy & Eggs',
   meat: 'Meat & Seafood',
@@ -64,6 +70,14 @@ export const CATEGORY_LABELS: Record<Category, string> = {
   snacks: 'Snacks',
   spices: 'Spices',
   household: 'Household',
+}
+
+export function isBuiltInCategory(category: Category): category is BuiltInCategory {
+  return (CATEGORIES as string[]).includes(category)
+}
+
+export function categoryLabel(category: Category): string {
+  return isBuiltInCategory(category) ? CATEGORY_LABELS[category] : category
 }
 
 export interface CatalogItem {

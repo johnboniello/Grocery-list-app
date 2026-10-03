@@ -3,13 +3,15 @@ import { ItemListView } from '../components/lists/ItemListView'
 import { CatalogSearchBar } from '../components/lists/CatalogSearchBar'
 import { useCatalog } from '../hooks/useCatalog'
 import { useThisWeekList } from '../hooks/useThisWeekList'
+import { useItemActions } from '../hooks/useItemActions'
 import { useDietFilterContext } from '../contexts/DietFilterContext'
 import type { Category, DietTags } from '../types/models'
 
 export function CatalogScreen() {
   const [query, setQuery] = useState('')
-  const { items, addCustomItem, updateDietTags, updateCategory } = useCatalog()
+  const { items, addCustomItem, updateDietTags } = useCatalog()
   const { addItem, addedIds } = useThisWeekList()
+  const { setCategory, rename, remove } = useItemActions('catalog', addedIds)
   const { activeRestrictions } = useDietFilterContext()
 
   const queryLower = query.trim().toLowerCase()
@@ -55,7 +57,9 @@ export function CatalogScreen() {
         addedIds={addedIds}
         onAdd={(id, name) => addItem(id, name, 'catalog')}
         onEditTags={(id, tags) => updateDietTags(id, tags)}
-        onEditCategory={(id, category) => updateCategory(id, category)}
+        onEditCategory={setCategory}
+        onRename={rename}
+        onDelete={remove}
         emptyMessage="No matching items — try adding it as a new item above."
       />
     </div>
