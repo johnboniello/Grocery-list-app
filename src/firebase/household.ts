@@ -1,4 +1,4 @@
-import { arrayRemove, collection, doc, getDocs, serverTimestamp, setDoc, writeBatch } from 'firebase/firestore'
+import { arrayRemove, collection, deleteField, doc, getDocs, serverTimestamp, setDoc, writeBatch } from 'firebase/firestore'
 import { db } from './config'
 import highFrequencySeed from './seedData/highFrequency.json'
 import lessFrequentSeed from './seedData/lessFrequent.json'
@@ -98,7 +98,8 @@ function tagsDiffer(a: DietTags | undefined, b: DietTags | undefined): boolean {
 
 /**
  * Adds any seed items a collection doesn't already have, and refreshes the diet tags
- * and category of items it already has to match the current template — so corrections
+ * and category of items it already has to match the current template (except categories
+ * the household has changed in-app, marked `categoryEdited`) — so corrections
  * to the bundled data (e.g. a fixed diet-tag mistake, or newly added categories) reach
  * households that were already seeded.
  *
@@ -135,11 +136,16 @@ function syncCollection(
     }
     if (collectionName === 'catalog' && current.source !== 'seed') continue
     const dietTagsChanged = tagsDiffer(current.dietTags as DietTags | undefined, item.dietTags)
-    const categoryChanged = (current.category ?? undefined) !== (item.category ?? undefined)
+    // A category the household picked in-app wins over the template's.
+    const categoryChanged =
+      current.categoryEdited !== true && (current.category ?? undefined) !== (item.category ?? undefined)
     if (dietTagsChanged || categoryChanged) {
       batch.set(
         doc(db, 'households', householdId, collectionName, item.id),
-        { dietTags: item.dietTags ?? {}, ...(item.category ? { category: item.category } : {}) },
+        {
+          ...(dietTagsChanged ? { dietTags: item.dietTags ?? {} } : {}),
+          ...(categoryChanged ? { category: item.category ?? deleteField() } : {}),
+        },
         { merge: true },
       )
       changed++

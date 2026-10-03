@@ -1,19 +1,31 @@
 import { useState } from 'react'
 import { computeCompliance } from '../../utils/dietCompliance'
 import { DietTagEditor } from '../diet/DietTagEditor'
-import type { DietRestriction, DietTags } from '../../types/models'
+import { CategoryPicker } from './CategoryPicker'
+import type { Category, DietRestriction, DietTags } from '../../types/models'
 import './ItemRow.css'
 
 interface Props {
   name: string
   dietTags?: DietTags
+  category?: Category
   activeRestrictions: DietRestriction[]
   isAdded: boolean
   onAdd: () => void
   onEditTags?: (dietTags: DietTags) => void
+  onEditCategory?: (category: Category | undefined) => void
 }
 
-export function ItemRow({ name, dietTags, activeRestrictions, isAdded, onAdd, onEditTags }: Props) {
+export function ItemRow({
+  name,
+  dietTags,
+  category,
+  activeRestrictions,
+  isAdded,
+  onAdd,
+  onEditTags,
+  onEditCategory,
+}: Props) {
   const [editing, setEditing] = useState(false)
   const status = computeCompliance(dietTags, activeRestrictions)
 
@@ -24,11 +36,12 @@ export function ItemRow({ name, dietTags, activeRestrictions, isAdded, onAdd, on
           <span className="item-row__name">{name}</span>
           {isAdded && <span className="item-row__added">Added</span>}
         </button>
-        {onEditTags && (
+        {(onEditTags || onEditCategory) && (
           <button
             type="button"
             className="item-row__edit"
-            aria-label={`Edit diet tags for ${name}`}
+            aria-label={`Edit category and diet tags for ${name}`}
+            aria-expanded={editing}
             onClick={() => setEditing((v) => !v)}
           >
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -38,9 +51,13 @@ export function ItemRow({ name, dietTags, activeRestrictions, isAdded, onAdd, on
           </button>
         )}
       </div>
-      {editing && onEditTags && (
-        <DietTagEditor dietTags={dietTags} onChange={onEditTags} />
+      {editing && onEditCategory && (
+        <div className="item-row__category">
+          <p className="item-row__section-label">Category</p>
+          <CategoryPicker value={category} onChange={onEditCategory} />
+        </div>
       )}
+      {editing && onEditTags && <DietTagEditor dietTags={dietTags} onChange={onEditTags} />}
     </div>
   )
 }

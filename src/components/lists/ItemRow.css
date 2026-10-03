@@ -70,3 +70,20 @@
   cursor: pointer;
   color: var(--text-muted);
 }
+
+.item-row__category {
+  margin: 8px 0 4px;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.item-row__section-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin: 0;
+}

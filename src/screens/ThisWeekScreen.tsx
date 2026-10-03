@@ -4,9 +4,12 @@ import { useThisWeekList } from '../hooks/useThisWeekList'
 import { useCatalog } from '../hooks/useCatalog'
 import { useStaticList } from '../hooks/useStaticList'
 import { useDietFilterContext } from '../contexts/DietFilterContext'
-import type { Category, DietTags } from '../types/models'
+import { useHousehold } from '../contexts/HouseholdContext'
+import { updateItemCategory } from '../firebase/lists'
+import type { Category, DietTags, ThisWeekItem } from '../types/models'
 
 export function ThisWeekScreen() {
+  const { householdId } = useHousehold()
   const { items, toggleChecked, setNote, setCounts, removeItem, clearChecked } = useThisWeekList()
   const { items: catalogItems } = useCatalog()
   const highFrequency = useStaticList('highFrequency')
@@ -31,6 +34,14 @@ export function ThisWeekScreen() {
     return map
   }, [catalogItems, highFrequency, lessFrequent])
 
+  // The category lives on the item's source-list doc, so every tab picks up the change.
+  const handleSetCategory = (item: ThisWeekItem, category: Category | undefined) => {
+    if (!householdId) return
+    updateItemCategory(householdId, item.sourceList, item.catalogItemId, category).catch((err: unknown) =>
+      console.error('Failed to update category', err),
+    )
+  }
+
   return (
     <ThisWeekList
       items={items}
@@ -40,6 +51,7 @@ export function ThisWeekScreen() {
       onToggleChecked={toggleChecked}
       onSetNote={setNote}
       onSetCounts={setCounts}
+      onSetCategory={handleSetCategory}
       onRemove={removeItem}
       onClearChecked={clearChecked}
     />

@@ -8,7 +8,7 @@ import type { Category, DietTags } from '../types/models'
 
 export function CatalogScreen() {
   const [query, setQuery] = useState('')
-  const { items, addCustomItem, updateDietTags } = useCatalog()
+  const { items, addCustomItem, updateDietTags, updateCategory } = useCatalog()
   const { addItem, addedIds } = useThisWeekList()
   const { activeRestrictions } = useDietFilterContext()
 
@@ -55,6 +55,7 @@ export function CatalogScreen() {
         addedIds={addedIds}
         onAdd={(id, name) => addItem(id, name, 'catalog')}
         onEditTags={(id, tags) => updateDietTags(id, tags)}
+        onEditCategory={(id, category) => updateCategory(id, category)}
         emptyMessage="No matching items — try adding it as a new item above."
       />
     </div>

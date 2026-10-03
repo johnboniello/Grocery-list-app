@@ -19,10 +19,19 @@ interface Props {
   addedIds: Set<string>
   onAdd: (catalogItemId: string, name: string) => void
   onEditTags?: (catalogItemId: string, dietTags: DietTags) => void
+  onEditCategory?: (catalogItemId: string, category: Category | undefined) => void
   emptyMessage?: string
 }
 
-export function ItemListView({ rows, activeRestrictions, addedIds, onAdd, onEditTags, emptyMessage }: Props) {
+export function ItemListView({
+  rows,
+  activeRestrictions,
+  addedIds,
+  onAdd,
+  onEditTags,
+  onEditCategory,
+  emptyMessage,
+}: Props) {
   const [sortMode, setSortMode] = useSortMode()
 
   const groups = useMemo(
@@ -48,10 +57,14 @@ export function ItemListView({ rows, activeRestrictions, addedIds, onAdd, onEdit
               key={row.catalogItemId}
               name={row.name}
               dietTags={row.dietTags}
+              category={row.category}
               activeRestrictions={activeRestrictions}
               isAdded={addedIds.has(row.catalogItemId)}
               onAdd={() => onAdd(row.catalogItemId, row.name)}
               onEditTags={onEditTags ? (tags) => onEditTags(row.catalogItemId, tags) : undefined}
+              onEditCategory={
+                onEditCategory ? (category) => onEditCategory(row.catalogItemId, category) : undefined
+              }
             />
           ))}
         </div>

@@ -2,9 +2,9 @@ import { ItemListView } from '../components/lists/ItemListView'
 import { useStaticList } from '../hooks/useStaticList'
 import { useThisWeekList } from '../hooks/useThisWeekList'
 import { useHousehold } from '../contexts/HouseholdContext'
-import { updateStaticListItemTags, type StaticListName } from '../firebase/lists'
+import { updateItemCategory, updateStaticListItemTags, type StaticListName } from '../firebase/lists'
 import { useDietFilterContext } from '../contexts/DietFilterContext'
-import type { DietTags } from '../types/models'
+import type { Category, DietTags } from '../types/models'
 
 interface Props {
   listName: StaticListName
@@ -24,6 +24,13 @@ export function StaticListScreen({ listName }: Props) {
     )
   }
 
+  const handleEditCategory = (itemId: string, category: Category | undefined) => {
+    if (!householdId) return
+    updateItemCategory(householdId, listName, itemId, category).catch((err: unknown) =>
+      console.error('Failed to update category', err),
+    )
+  }
+
   return (
     <ItemListView
       rows={rows}
@@ -31,6 +38,7 @@ export function StaticListScreen({ listName }: Props) {
       addedIds={addedIds}
       onAdd={(id, name) => addItem(id, name, listName)}
       onEditTags={handleEditTags}
+      onEditCategory={handleEditCategory}
     />
   )
 }

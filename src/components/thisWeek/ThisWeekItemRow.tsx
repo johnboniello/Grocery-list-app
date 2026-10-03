@@ -1,7 +1,8 @@
 import { useRef, useState } from 'react'
 import { computeCompliance } from '../../utils/dietCompliance'
 import { MAX_QUANTITY, type CountsPatch } from '../../utils/thisWeekCounts'
-import type { DietRestriction, DietTags, ThisWeekItem } from '../../types/models'
+import { CategoryPicker } from '../lists/CategoryPicker'
+import type { Category, DietRestriction, DietTags, ThisWeekItem } from '../../types/models'
 import './ThisWeekItemRow.css'
 
 const NOTE_MAX_LENGTH = 80
@@ -9,10 +10,12 @@ const NOTE_MAX_LENGTH = 80
 interface Props {
   item: ThisWeekItem
   dietTags: DietTags | undefined
+  category: Category | undefined
   activeRestrictions: DietRestriction[]
   onToggleChecked: () => void
   onSetNote: (note: string) => void
   onSetCounts: (patch: CountsPatch) => void
+  onSetCategory: (category: Category | undefined) => void
   onRemove: () => void
 }
 
@@ -56,7 +59,17 @@ function Stepper({ label, itemName, value, min, max, suffix, onChange }: Stepper
   )
 }
 
-export function ThisWeekItemRow({ item, dietTags, activeRestrictions, onToggleChecked, onSetNote, onSetCounts, onRemove }: Props) {
+export function ThisWeekItemRow({
+  item,
+  dietTags,
+  category,
+  activeRestrictions,
+  onToggleChecked,
+  onSetNote,
+  onSetCounts,
+  onSetCategory,
+  onRemove,
+}: Props) {
   const status = computeCompliance(dietTags, activeRestrictions)
   const [open, setOpen] = useState(false)
   const [draft, setDraft] = useState('')
@@ -121,7 +134,7 @@ export function ThisWeekItemRow({ item, dietTags, activeRestrictions, onToggleCh
       <button
         type="button"
         className="this-week-row__note-btn"
-        aria-label={`Edit note or quantity for ${item.name}`}
+        aria-label={`Edit note, quantity or category for ${item.name}`}
         aria-expanded={open}
         onClick={() => (open ? closePanel(true) : openPanel())}
       >
@@ -178,6 +191,10 @@ export function ThisWeekItemRow({ item, dietTags, activeRestrictions, onToggleCh
               else if (e.key === 'Escape') closePanel(false)
             }}
           />
+          <div>
+            <p className="this-week-row__section-label">Category</p>
+            <CategoryPicker value={category} onChange={onSetCategory} />
+          </div>
           <button type="button" className="this-week-row__done" onClick={() => closePanel(true)}>
             Done
           </button>

@@ -15,6 +15,7 @@ interface Props {
   onToggleChecked: (catalogItemId: string) => void
   onSetNote: (catalogItemId: string, note: string) => void
   onSetCounts: (catalogItemId: string, patch: CountsPatch) => void
+  onSetCategory: (item: ThisWeekItem, category: Category | undefined) => void
   onRemove: (catalogItemId: string) => void
   onClearChecked: () => void
 }
@@ -27,6 +28,7 @@ export function ThisWeekList({
   onToggleChecked,
   onSetNote,
   onSetCounts,
+  onSetCategory,
   onRemove,
   onClearChecked,
 }: Props) {
@@ -70,10 +72,12 @@ export function ThisWeekList({
               key={item.catalogItemId}
               item={item}
               dietTags={dietTagsById.get(item.catalogItemId)}
+              category={categoryById.get(item.catalogItemId)}
               activeRestrictions={activeRestrictions}
               onToggleChecked={() => onToggleChecked(item.catalogItemId)}
               onSetNote={(note) => onSetNote(item.catalogItemId, note)}
               onSetCounts={(patch) => onSetCounts(item.catalogItemId, patch)}
+              onSetCategory={(category) => onSetCategory(item, category)}
               onRemove={() => onRemove(item.catalogItemId)}
             />
           ))}
